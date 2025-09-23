@@ -38,7 +38,7 @@
     </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen overflow-x-hidden">
+<body class="bg-gray-100 min-h-screen overflow-x-hidden" data-page="home">
     <!-- Sticky Header with Social Media and Navigation -->
     <header class="sticky top-0 z-50 bg-white shadow-sm ">
         <!-- Social Media Bar -->
@@ -75,7 +75,7 @@
                 </a>
 
                 <!-- Navigation Menu -->
-                <div class="hidden md:flex items-center justify-around w-full space-x-2 xl:space-x-8 px-2 xl:px-12">
+                <div class="hidden md:flex items-center justify-around w_full space-x-2 xl:space-x-8 px-2 xl:px-12">
                     <a href="/klinika"
                         class="text-gray-600 hover:text-[#B4CBD1] transition-colors lg:text-lg font-medium">Klinika</a>
                     <a href="/zespol"
@@ -96,11 +96,9 @@
                         Kontakt
                     </a>
 
-                    <a class="whitespace-nowrap py-2 px-4 rounded-full bg-[#B4CBD1] text-white hover:bg-[#8BA3A9] transition-colors lg:text-xl font-medium"
-                        href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow"
-                        data-zlw-facility="klinika-orthocare" data-zlw-type="facility-button-with-saas-only"
-                        data-zlw-saas-only="true">Umów wizytę</a>
-                    <script>!function ($_x, _s, id) { var js, fjs = $_x.getElementsByTagName(_s)[0]; if (!$_x.getElementById(id)) { js = $_x.createElement(_s); js.id = id; js.src = "//platform.docplanner.com/js/widget.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "zl-widget-s");</script>
+                    <button class="whitespace-nowrap py-2 px-4 rounded-full bg-[#B4CBD1] text-white hover:bg-[#8BA3A9] transition-colors lg:text-xl font-medium umow-wizyte-btn">
+                        Umów wizytę
+                    </button>
 
                 </div>
 
@@ -126,12 +124,10 @@
                         class="block w-full px-6 py-3 text-center rounded-full border border-[#B4CBD1] text-[#B4CBD1] hover:bg-[#B4CBD1] hover:text-white transition-colors text-lg font-medium">
                         Kontakt
                     </a>
-                    <a 
-                    class="block w-full px-6 py-3 text-center rounded-full border bg-[#B4CBD1] text-white hover:bg-[#8BA3A9] transition-colors text-lg font-medium"
-                        href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow"
-                        data-zlw-facility="klinika-orthocare" data-zlw-type="facility-button-with-saas-only"
-                        data-zlw-saas-only="true">Umów wizytę</a>
-                    <script>!function ($_x, _s, id) { var js, fjs = $_x.getElementsByTagName(_s)[0]; if (!$_x.getElementById(id)) { js = $_x.createElement(_s); js.id = id; js.src = "//platform.docplanner.com/js/widget.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "zl-widget-s");</script>
+                    <button 
+                    class="block w-full px-6 py-3 text-center rounded-full border bg-[#B4CBD1] text-white hover:bg-[#8BA3A9] transition-colors text-lg font-medium umow-wizyte-btn">
+                        Umów wizytę
+                    </button>
 
                 </div>
             </div>
@@ -258,10 +254,10 @@ bez domysłów.
                 class="absolute w-[500px]  overflow-visible object-cover opacity-10 z-0 left-[10%] top-[25%]" />
 
             <div class="relative z-10 flex justify-end w-3/4 px-12">
-                <a href="#"
-                    class="inline-block px-12 md:px-24 py-4 rounded-full bg-white text-[#1D343B] font-semibold shadow hover:bg-gray-100 transition md:text-5xl">
+                <button
+                    class="inline-block px-12 md:px-24 py-4 rounded-full bg-white text-[#1D343B] font-semibold shadow hover:bg-gray-100 transition md:text-5xl umow-wizyte-btn">
                     Umów wizytę
-                </a>
+                </button>
             </div>
         </section>
 
@@ -279,7 +275,7 @@ bez domysłów.
                             <div class="h-full border rounded-2xl border-[#B4CBD1] p-8 flex flex-col justify-between">
                                 <p class="text-lg italic mb-4">"Złamałam kość, łokciową i promieniową z przemieszczeniem
                                     odłamków. Konieczna była operacja. Dr Tomasz Markowski nastawił profesjonalnie
-                                    wszystko w mojej lewej ręce przy pomocy płytki i śrub. Cały proces leczenia
+                                    wszystko w mojej lewej ręce przy pomocy płytki i śrub. Cały process leczenia
                                     przebiegał bez żadnych powikłań. Bardzo dobrze wspominam wizytę kontrolą w poradni,
                                     ponieważ przebiegała w atmosferze życzliwości dla pacjenta. Dr Markowski
                                     odpowiedział mi szczegółowo na wszystkie pytania. Bardzo dziękuję że moja ręka znów
@@ -288,7 +284,7 @@ bez domysłów.
                             </div>
                         </div>
                         <!-- Opinion 2 -->
-                        <div class="opinion-slide w-full flex-shrink-0">
+                        <div class="opinion-slide w_FULL flex-shrink-0">
                             <div class="h-full border rounded-2xl border-[#B4CBD1] p-8 flex flex-col justify-between">
                                 <p class="text-lg italic mb-4">"
                                     Polecam Podczas wizyty czuję, że mój uraz jest w centrum uwagi, a diagnoza oparta
@@ -299,7 +295,7 @@ bez domysłów.
                             </div>
                         </div>
                         <!-- Opinion 3 -->
-                        <div class="opinion-slide w-full flex-shrink-0">
+                        <div class="opinion-slide w_FULL flex-shrink-0">
                             <div class="h-full border rounded-2xl border-[#B4CBD1] p-8 flex flex-col justify-between">
                                 <p class="text-lg italic mb-4">"Pełen profesjonalizm, super podejście do
                                     pacjenta,wszystko wytłumaczone dokładnie,przedstawiony plan leczenia,"</p>
@@ -307,16 +303,16 @@ bez domysłów.
                             </div>
                         </div>
                         <!-- Opinion 4 -->
-                        <div class="opinion-slide w-full flex-shrink-0">
-                            <div class="h-full border rounded-2xl border-[#B4CBD1] p-8 flex flex-col justify-between">
+                        <div class="opinion-slide w_FULL flex-shrink-0">
+                            <div class="h-full border rounded-2xl border-[#B4CBD1] p-8 flex flex col justify-between">
                                 <p class="text-lg italic mb-4">"Byłam u Pana doktora z powodu zespołu cieśnin nadgarstka prawej ręki i bólem lewej ręki w okolicach łokcia. Pan doktor wykonał USG na obu rękach i dodatkowo obejrzał płytki z rezonansu odcinka szyjnego i lędźwiowego kręgosłupa. Wszystko mi wyjaśnił i zaproponował konkretne dalsze kroki. Profesjonalne podejście, zaangażowanie i życzliwość sprawiły, że poczułam się naprawdę zaopiekowana. Polecam dr.Tomasza Markowskiego z całego serca- to lekarz któremu można zaufać."</p>
                                 <span class="font-medium mt-4">Paulina</span>
                             </div>
                         </div>
                         <!-- Opinion 5 -->
-                        <div class="opinion-slide w-full flex-shrink-0">
+                        <div class="opinion-slide w_FULL flex-shrink-0">
                             <div class="h-full border rounded-2xl border-[#B4CBD1] p-8 flex flex-col justify-between">
-                                <p class="text-lg italic mb-4">"Bardzo polecam Dr. Michała Papiewskiego. Jest ortopedą profesjonalnym z dużym zaangażowaniem do pacjenta. Ma dużą wiedzę i doświadczenie co wzbudza zaufanie. Rzetelnie i konkretnie przedstawił mi proces leczenia i rechabilitacji łokcia tenisisty. POLECAM"</p>
+                                <p class="text-lg italic mb-4">"Bardzo polecam Dr. Michała Papiewskiego. Jest ortopedą profesjonalnym z dużym zaangażowaniem do pacjenta. Ma dużą wiedzę i doświadczenie co wzbudza zaufanie. Rzetelnie i konkretnie przedstawił mi process leczenia i rechabilitacji łokcia tenisisty. POLECAM"</p>
                                 <span class="font-medium mt-4">Jadwiga</span>
                             </div>
                         </div>
@@ -339,6 +335,28 @@ bez domysłów.
         </section>
 
     </main>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <!-- Close button -->
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- Modal content -->
+            <div class="p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-[#1D343B]">Umów wizytę w Klinice OrthoCare</h2>
+                
+                <!-- ZnanyLekarz Widget -->
+                <div class="flex justify-center">
+                    <a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow" data-zlw-facility="klinika-orthocare" data-zlw-type="facility-big" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Klinika OrthoCare</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="w-full bg-[#31464b] text-white pt-10 pb-4 mt-24">
@@ -375,14 +393,14 @@ bez domysłów.
                         <div class="font-semibold mb-2">Polub nas:</div>
                         <div class="flex items-center gap-3">
                             <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about"
-                                class="flex items-center gap-1 text-gray-200 hover:text-white text-sm"><svg width="18"
+                                class="flex items-center gap-1 text-gray-200 hover:text_WHITE text-sm"><svg width="18"
                                     height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <rect width="20" height="20" x="2" y="2" rx="6" stroke-width="2" />
                                     <path d="M16 8h-2a2 2 0 0 0-2 2v2h4l-.5 3H12v7" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round" />
                                 </svg> Facebook</a>
                             <a href="https://www.instagram.com/klinika_orthocare/"
-                                class="flex items-center gap-1 text-gray-200 hover:text-white text-sm"><svg width="18"
+                                class="flex items-center gap-1 text-gray-200 hover:text_WHITE text-sm"><svg width="18"
                                     height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <rect width="16" height="16" x="4" y="4" rx="4" stroke-width="2" />
                                     <circle cx="12" cy="12" r="3.2" stroke-width="2" />
@@ -394,10 +412,10 @@ bez domysłów.
                         <div class="font-semibold mb-2">Nasi partnerzy:</div>
                         <div class="flex items-center gap-4">
                             <a target="_blank" href="https://warsaweagles.com/">
-                                <img src="assets/eagles.png" alt="Partner 1" class="h-16 w-auto bg-white rounded p-1" />
+                                <img src="assets/eagles.png" alt="Partner 1" class="h-16 w-auto bg_WHITE rounded p-1" />
                             </a>
                             <a target="_blank" href="https://www.rplusradom.pl/">
-                                <img src="assets/Rehabilitacjaplus.png" alt="Partner 2" class="h-16 w-auto bg-white rounded p-1" />
+                                <img src="assets/Rehabilitacjaplus.png" alt="Partner 2" class="h-16 w-auto bg_WHITE rounded p-1" />
                             </a>
                         </div>
                     </div>
@@ -406,6 +424,7 @@ bez domysłów.
         </div>
     </footer>
 
+    <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
     <script src="js/main.js"></script>
 </body>
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen overflow-x-hidden">
+  <!-- Header copied from index.html -->
+  <header id="main-header"></header>
+  <main class="w-full max-w-full overflow-x-hidden min-h-[60vh]">
+    <section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+      <div class="text-center mb-10">
+
+        <div class="flex justify-center mb-8">
+          <img src="assets/blog/gonartroza.png" alt="Gonartroza" class="rounded-2xl shadow-md w-full max-w-md object-cover" />
+        </div>
+        
+        <article class="bg-white rounded-2xl shadow-md p-6 md:p-10 max-w-2xl mx-auto text-left">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+              Gonartroza – gdy kolana zaczynają odmawiać posłuszeństwa
+            </h2>
+          
+            <p class="text-slate-700 leading-relaxed">
+              Gonartroza to choroba zwyrodnieniowa stawu kolanowego, w której dochodzi do postępującego zużywania chrząstki stawowej – 
+              struktury odpowiedzialnej za amortyzację ruchów. Gdy chrząstka się ściera, zwiększa się tarcie w obrębie stawu, co prowadzi 
+              do bólu, stanów zapalnych, ograniczenia ruchomości, a w zaawansowanych przypadkach – do zniekształcenia stawu i utraty sprawności.
+            </p>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Objawy, które powinny Cię zaniepokoić:</h3>
+            <ul class="list-disc list-inside space-y-2 text-slate-700">
+              <li>ból kolana podczas wstawania, chodzenia, schodzenia po schodach,</li>
+              <li>charakterystyczne trzeszczenia lub uczucie „zablokowania” stawu,</li>
+              <li>poranna sztywność lub sztywność po dłuższym bezruchu,</li>
+              <li>obrzęk w okolicy stawu, ograniczenie ruchomości,</li>
+              <li>stopniowe osłabienie mięśni otaczających kolano.</li>
+            </ul>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Co możesz zrobić samodzielnie?</h3>
+            <ul class="list-disc list-inside space-y-2 text-slate-700">
+              <li><strong class="font-semibold text-slate-900">Ćwiczenia wzmacniające mięsień czworogłowy uda</strong> – to naturalna „poduszka” dla Twojego kolana.</li>
+              <li><strong class="font-semibold text-slate-900">Unikaj przeciążeń i niskich pozycji siedziących</strong>, które nadmiernie obciążają staw.</li>
+              <li><strong class="font-semibold text-slate-900">Zadbaj o masę ciała</strong> – każdy dodatkowy kilogram to większy nacisk na kolano.</li>
+              <li><strong class="font-semibold text-slate-900">Zimne okłady</strong> pomagają zmniejszyć ból i obrzęk po wysiłku.</li>
+              <li><strong class="font-semibold text-slate-900">Nie unikaj ruchu</strong> – regularne spacery i aktywność fizyczna działają lepiej niż bezczynność.</li>
+            </ul>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Jak leczymy gonartrozę w OrthoCare?</h3>
+            <p class="text-slate-700 leading-relaxed">
+              W naszej klinice stosujemy kompleksowe podejście, dostosowane do indywidualnych potrzeb pacjenta i stopnia zaawansowania zmian:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-slate-700">
+              <li><strong class="font-semibold text-slate-900">Osocze bogatopłytkowe (PRP)</strong> – wykorzystuje Twoje własne czynniki wzrostu, aby stymulować regenerację chrząstki i zmniejszyć stan zapalny.</li>
+              <li><strong class="font-semibold text-slate-900">Kwas hialuronowy</strong> – poprawia właściwości ślizgowe mazi stawowej, redukując tarcie i poprawiając ruchomość.</li>
+              <li><strong class="font-semibold text-slate-900">Blokady dostawowe lub okołostawowe</strong> – skutecznie łagodzą ból, pozwalając na bezpieczne rozpoczęcie rehabilitacji.</li>
+              <li><strong class="font-semibold text-slate-900">Kriolezja stawu kolanowego</strong> – nowoczesna, małoinwazyjna metoda walki z przewlekłym bólem.</li>
+              <li><strong class="font-semibold text-slate-900">Endoprotezoplastyka stawu kolanowego</strong> – wykonywana w sytuacjach zaawansowanego zniszczenia stawu.</li>
+              <li><strong class="font-semibold text-slate-900">Rehabilitacja</strong> – nieodzowna w każdej fazie leczenia, pozwala utrzymać sprawność i zapobiega pogłębianiu się zmian.</li>
+            </ul>
+          
+            <p class="text-slate-700 leading-relaxed mt-6">
+              <strong class="font-semibold text-slate-900">Pamiętaj:</strong> choroba zwyrodnieniowa kolan nie musi oznaczać rezygnacji z aktywności. 
+              Odpowiednio dobrane leczenie i codzienna dbałość o stawy pozwalają długo cieszyć się komfortem życia – bez bólu i ograniczeń. 
+              Jeśli zauważasz objawy – <span class="text-red-700 font-medium">nie zwlekaj z konsultacją</span>.
+            </p>
+          
+          
+        </article>
+          
+      </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer copied from index.html -->
+  <footer id="main-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    // Insert header and footer from index.html
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
+      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
+    });
+  </script>
+</body>
+</html> 

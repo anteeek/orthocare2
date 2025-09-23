@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen overflow-x-hidden">
+  <!-- Header copied from index.html -->
+  <header id="main-header"></header>
+  <main class="w-full max-w-full overflow-x-hidden min-h-[60vh]">
+    <section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+      <div class="text-center mb-10">
+
+        <div class="flex justify-center mb-8">
+          <img src="assets/blog/osocze-bogatoplytkowe.png" alt="Osocze bogatopłytkowe" class="rounded-2xl shadow-md w-full max-w-md object-cover" />
+        </div>
+        
+        <article class="bg-white rounded-2xl shadow-md p-6 md:p-10 max-w-2xl mx-auto text-left">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#31464b] mb-6 text-center">Osocze bogatopłytkowe (PRP) – naturalna regeneracja tkanek w OrthoCare</h2>
+        
+          <p class="mb-4 text-gray-700 leading-relaxed">
+            PRP (Platelet-Rich Plasma), czyli osocze bogatopłytkowe, to preparat pozyskiwany z krwi pacjenta. Zawiera skoncentrowaną ilość płytek krwi, które są źródłem naturalnych <strong class="font-semibold text-[#1D343B]">czynników wzrostu</strong>. Te substancje odgrywają kluczową rolę w regeneracji tkanek – stymulują namnażanie komórek, poprawiają ukrwienie i przyspieszają procesy gojenia.
+          </p>
+          <p class="mb-8 text-gray-700 leading-relaxed">
+            Zabieg polega na pobraniu niewielkiej ilości krwi, odwirowaniu jej w specjalistycznym systemie (w OrthoCare korzystamy m.in. z <strong class="font-semibold text-[#1D343B]">Xerthra™ PRP kit</strong>) i podaniu oczyszczonego osocza pod kontrolą USG bezpośrednio do chorego miejsca – stawu, ścięgna czy więzadła.
+          </p>
+        
+          <h3 class="text-xl font-semibold text-[#31464b] mb-2 mt-8">Kiedy warto rozważyć terapię PRP?</h3>
+          <p class="mb-3 text-gray-700">Terapia osoczem bogatopłytkowym znajduje zastosowanie w szerokim zakresie dolegliwości ortopedycznych i pourazowych. W OrthoCare najczęściej pomagamy pacjentom w przypadku:</p>
+          <ul class="list-disc list-inside mb-8 text-gray-700 space-y-1">
+            <li>bólu i zwyrodnień stawów (kolan, bioder, barków, stóp),</li>
+            <li>uszkodzeń i zapaleń ścięgien oraz więzadeł (np. łokieć tenisisty, ostroga piętowa, entezopatie),</li>
+            <li>przewlekłych przeciążeń, zwłaszcza u osób aktywnych fizycznie i sportowców,</li>
+            <li>rekonwalescencji po urazach lub zabiegach ortopedycznych.</li>
+          </ul>
+        
+          <h3 class="text-xl font-semibold text-[#31464b] mb-2 mt-8">Dlaczego warto wybrać PRP?</h3>
+          <ul class="list-disc list-inside mb-8 text-gray-700 space-y-1">
+            <li><strong class="font-semibold text-[#1D343B]">Bezpieczeństwo</strong> – preparat pochodzi z własnej krwi pacjenta, więc ryzyko reakcji alergicznej lub powikłań jest minimalne.</li>
+            <li><strong class="font-semibold text-[#1D343B]">Naturalne działanie</strong> – organizm wykorzystuje własne mechanizmy gojenia.</li>
+            <li><strong class="font-semibold text-[#1D343B]">Skuteczność</strong> – terapia PRP wspomaga regenerację tkanek i pozwala wielu pacjentom uniknąć leczenia operacyjnego.</li>
+            <li><strong class="font-semibold text-[#1D343B]">Precyzja</strong> – zabiegi wykonujemy <strong class="font-semibold text-[#1D343B]">pod kontrolą USG</strong>, co zwiększa skuteczność i bezpieczeństwo procedury.</li>
+          </ul>
+        
+          <h3 class="text-xl font-semibold text-[#31464b] mb-2 mt-8">Jak wygląda leczenie w OrthoCare?</h3>
+          <p class="mb-4 text-gray-700 leading-relaxed">
+            Każdy pacjent jest najpierw kwalifikowany do zabiegu przez doświadczonego lekarza ortopedę. Po dokładnym badaniu i wywiadzie planowany jest zakres terapii. Sam zabieg trwa kilkanaście minut i zazwyczaj nie wymaga specjalnego przygotowania ani długiej rekonwalescencji.
+          </p>
+        
+          <p class="mt-6 text-[#1D343B] font-semibold text-lg">
+            Masz pytania? Zastanawiasz się, czy PRP będzie odpowiednie dla Ciebie? Skontaktuj się z nami i umów się na konsultację ortopedyczną – pomożemy Ci wrócić do sprawności!
+          </p>
+        </article>
+          
+      </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer copied from index.html -->
+  <footer id="main-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    // Insert header and footer from index.html
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
+      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
+    });
+  </script>
+</body>
+</html> 

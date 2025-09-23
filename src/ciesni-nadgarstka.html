@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen overflow-x-hidden">
+  <!-- Header copied from index.html -->
+  <header id="main-header"></header>
+  <main class="w-full max-w-full overflow-x-hidden min-h-[60vh]">
+    <section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+      <div class="text-center mb-10">
+
+        <div class="flex justify-center mb-8">
+          <img src="assets/blog/nadgarstka.png" alt="Zespół cieśni nadgarstka" class="rounded-2xl shadow-md w-full max-w-md object-cover" />
+        </div>
+        
+        <article class="bg-white rounded-2xl shadow-md p-6 md:p-10 max-w-2xl mx-auto text-left">
+          <section class="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-2xl prose prose-lg prose-slate">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+              Zespół cieśni nadgarstka – kiedy drętwienie dłoni to coś więcej
+            </h2>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Co to jest zespół cieśni nadgarstka?</h3>
+            <p class="text-slate-700 leading-relaxed">
+              Zespół cieśni nadgarstka (<strong class="font-semibold text-slate-900">CTS – carpal tunnel syndrome</strong>) 
+              to schorzenie spowodowane <strong class="font-semibold text-slate-900">uciskiem nerwu pośrodkowego</strong> 
+              w tzw. kanale nadgarstka – wąskiej przestrzeni ograniczonej przez kości i więzadła. 
+              Nerw ten odpowiada m.in. za czucie w kciuku, palcu wskazującym, środkowym i części serdecznego 
+              oraz za siłę mięśni kciuka.
+            </p>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Objawy cieśni nadgarstka – na co zwrócić uwagę?</h3>
+            <ul class="list-disc list-inside space-y-2 text-slate-700">
+              <li>Mrowienie, drętwienie lub „prądy” w palcach (głównie kciuk, palec wskazujący i środkowy)</li>
+              <li>Ból w nadgarstku i dłoni, często promieniujący do przedramienia</li>
+              <li>Nasilanie się objawów w nocy – ból potrafi wybudzać ze snu</li>
+              <li>Osłabienie chwytu, trudność z utrzymaniem przedmiotów (np. filiżanki)</li>
+              <li>Sztywność i obrzęk dłoni rano</li>
+            </ul>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Kogo najczęściej dotyczy?</h3>
+            <p class="text-slate-700 leading-relaxed">
+              Zespół cieśni nadgarstka to problem osób pracujących przy komputerze, 
+              wykonujących powtarzalne ruchy ręką, kobiet w ciąży oraz osób z chorobami przewlekłymi 
+              (cukrzyca, niedoczynność tarczycy, RZS).
+            </p>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Jak możesz sobie pomóc w domu?</h3>
+            <ul class="list-disc list-inside space-y-2 text-slate-700">
+              <li>Zadbaj o ergonomię stanowiska pracy – przedramiona powinny być oparte, nadgarstek nie powinien być zgięty</li>
+              <li>Rób przerwy w pracy, rozluźniaj i rozciągaj dłonie</li>
+              <li>Stosuj zimne okłady, jeśli pojawia się ból i obrzęk</li>
+              <li>Noś ortezę/stabilizator na noc</li>
+              <li>Ogranicz ruchy wymagające zacisku i obciążania nadgarstka</li>
+            </ul>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Kiedy do specjalisty?</h3>
+            <p class="text-slate-700 leading-relaxed">
+              Jeśli objawy utrzymują się dłużej niż kilka tygodni lub nasilają się – nie zwlekaj. 
+              W <strong class="font-semibold text-slate-900">OrthoCare</strong> wykonujemy 
+              <strong class="font-semibold text-slate-900">dokładną diagnostykę USG</strong> oraz testy kliniczne 
+              potwierdzające rozpoznanie cieśni nadgarstka.
+            </p>
+          
+            <p class="text-slate-700 leading-relaxed">W zależności od zaawansowania schorzenia oferujemy:</p>
+            <ul class="list-disc list-inside space-y-2 text-slate-700">
+              <li>Rehabilitację i terapię zachowawczą</li>
+              <li>Zabiegi z osoczem bogatopłytkowym (PRP)</li>
+              <li>Blokady przeciwzapalne</li>
+              <li>Zabieg chirurgicznego odbarczenia nerwu</li>
+            </ul>
+          
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Zadbaj o swoje ręce</h3>
+            <p class="text-slate-700 leading-relaxed">
+              Zespół cieśni nadgarstka może znacząco utrudniać codzienne życie. 
+              Dlatego nie ignoruj objawów – <span class="text-red-700 font-medium">wcześniejsza diagnoza</span> 
+              to większa szansa na skuteczne leczenie i odzyskanie sprawności.
+            </p>
+        </article>
+          
+      </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer copied from index.html -->
+  <footer id="main-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    // Insert header and footer from index.html
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
+      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
+    });
+  </script>
+</body>
+</html> 
