@@ -1,19 +1,38 @@
-// Mobile menu toggle
-const mobileMenuButton = document.querySelector('button.md\\:hidden');
-const mobileMenu = document.querySelector('.md\\:hidden.hidden');
+// Mobile menu toggle - moved to function to handle dynamic loading
+function initMobileMenu() {
+    const mobileMenuButton = document.querySelector('button.md\\:hidden');
+    const mobileMenu = document.querySelector('.md\\:hidden.hidden');
 
-if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+    if (mobileMenuButton && mobileMenu) {
+        // Remove any existing listeners to avoid duplicates
+        mobileMenuButton.removeEventListener('click', handleMobileMenuClick);
+        mobileMenuButton.addEventListener('click', handleMobileMenuClick);
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-            mobileMenu.classList.add('hidden');
-        }
-    });
+        // Close mobile menu when clicking outside
+        document.removeEventListener('click', handleMobileMenuOutsideClick);
+        document.addEventListener('click', handleMobileMenuOutsideClick);
+    }
 }
+
+function handleMobileMenuClick() {
+    const mobileMenu = document.querySelector('.md\\:hidden.hidden');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('hidden');
+    }
+}
+
+function handleMobileMenuOutsideClick(e) {
+    const mobileMenuButton = document.querySelector('button.md\\:hidden');
+    const mobileMenu = document.querySelector('.md\\:hidden.hidden');
+    
+    if (mobileMenuButton && mobileMenu && 
+        !mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+    }
+}
+
+// Initialize mobile menu on DOM ready
+document.addEventListener('DOMContentLoaded', initMobileMenu);
 
 // Counter animation
 function animateCounter(element, target, duration = 2000) {
@@ -345,4 +364,8 @@ function initDelegatedBookingModal() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', initDelegatedBookingModal); 
+document.addEventListener('DOMContentLoaded', initDelegatedBookingModal);
+
+// Re-initialize mobile menu after dynamic content loads
+// This will be called after fetch operations complete
+window.reinitMobileMenu = initMobileMenu;
