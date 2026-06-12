@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tomasz Markowski – OrthoCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-brand-light min-h-screen overflow-x-hidden">
+  <header id="main-header"></header>
+  <main class="w-full max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold text-brand-dark mb-2">lek. Tomasz Markowski</h1>
+    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu</h2>
+    <img src="assets/doctors/markowski_tall.png" alt="lek. Tomasz Markowski" class="w-48 rounded-2xl mb-8 object-cover">
+    <div class="text-gray-700 leading-relaxed space-y-4">
+      <p>Dr Tomasz Markowski to specjalista ortopedii i traumatologii narządu ruchu, absolwent Wydziału Wojskowo-Lekarskiego Uniwersytetu Medycznego w Łodzi. Posiada wieloletnie doświadczenie kliniczne zdobyte m.in. w Mazowieckim Szpitalu Specjalistycznym w Radomiu oraz w Radomskim Szpitalu Specjalistycznym. Obecnie operuje pacjentów również w Szpitalu Powiatowym w Pionkach i w Opocznie.</p>
+      <p>Specjalizuje się w leczeniu przewlekłego bólu kręgosłupa z wykorzystaniem małoinwazyjnych technik interwencyjnych. Wykonuje kriolezję nerwów pod kontrolą USG – zabieg, który przynosi długotrwałą ulgę w bólu i znaczącą poprawę jakości życia pacjentów. Do tej pory przeprowadził ponad 400 takich procedur. Leczy również zespoły bólowe związane z przepuklinami dyskowymi oraz niestabilnością segmentów kręgosłupa. W swojej praktyce wprowadza również innowacyjne zabiegi z użyciem preparatu Discogel – małoinwazyjnej metody leczenia bólu dyskogennego, polegającej na przezskórnym wstrzyknięciu żelu do zmienionego chorobowo krążka międzykręgowego.</p>
+      <p>W codziennej pracy wykorzystuje również iniekcje z osocza bogatopłytkowego (PRP), kwasu hialuronowego oraz blokady nerwów obwodowych pod kontrolą USG. Zajmuje się także leczeniem urazów i przeciążeń kończyny górnej oraz kolana, w tym bólu barku, łokcia, nadgarstka i stawu kolanowego. Wykonuje wybrane zabiegi artroskopowe oraz z zakresu chirurgii ręki.</p>
+      <p>Swoją wiedzą i doświadczeniem dzieli się prowadząc kursy dla lekarzy z zakresu iniekcji pod kontrolą USG. Ukończył szereg prestiżowych szkoleń, m.in. AOTrauma Basic & Advanced Principles of Fracture Management, IBRA – Trauma and Reconstruction of the Upper Limb, kurs "Ostra Ręka" oraz szkolenie z artroskopii kolana i ultrasonografii interwencyjnej w kriolezji.</p>
+    </div>
+  </main>
+  <footer id="main-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
+      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
+      if (window.reinitMobileMenu) window.reinitMobileMenu();
+    });
+  </script>
+</body>
+</html>

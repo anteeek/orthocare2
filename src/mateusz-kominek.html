@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mateusz Kominek – OrthoCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-brand-light min-h-screen overflow-x-hidden">
+  <header id="main-header"></header>
+  <main class="w-full max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold text-brand-dark mb-2">dr n.med. Mateusz Kominek</h1>
+    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu</h2>
+    <img src="assets/doctors/anonymous.jpg" alt="dr n.med. Mateusz Kominek" class="w-48 rounded-2xl mb-8 object-cover">
+    <div class="text-gray-700 leading-relaxed space-y-4">
+      <p>Dr n. med. Mateusz Kominek jest specjalistą ortopedii i traumatologii narządu ruchu oraz cenionym chirurgiem kręgosłupa związanym z Uniwersyteckim Szpitalem Klinicznym nr 4 w Lublinie.</p>
+      <p>Specjalizuje się w leczeniu chorób i urazów kręgosłupa, w tym kręgozmyków, przepuklin krążków międzykręgowych, skolioz oraz innych deformacji. Prowadzi również terapię pourazowej niewydolności kręgosłupa i złamań, w tym niskoenergetycznych złamań osteoporotycznych.</p>
+      <p>W codziennej praktyce wykorzystuje nowoczesne techniki stabilizacji oraz podejście dopasowane do indywidualnych potrzeb pacjenta.</p>
+      <p>Zajmuje się również leczeniem zachowawczym i operacyjnym zaawansowanej choroby zwyrodnieniowej stawów biodrowych i kolanowych – zarówno metodami klasycznymi, jak i małoinwazyjnymi oraz endoskopowymi.</p>
+      <p>Jest członkiem Polskiego Towarzystwa Chirurgii Kręgosłupa oraz międzynarodowej organizacji AO Spine, zrzeszającej specjalistów leczenia patologii kręgosłupa z całego świata. Łączy zaawansowaną wiedzę medyczną z dużym doświadczeniem klinicznym, co pozwala mu skutecznie pomagać pacjentom w powrocie do sprawności.</p>
+    </div>
+  </main>
+  <footer id="main-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
+      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
+      if (window.reinitMobileMenu) window.reinitMobileMenu();
+    });
+  </script>
+</body>
+</html>

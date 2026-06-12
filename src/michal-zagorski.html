@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michał Zagórski – OrthoCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-brand-light min-h-screen overflow-x-hidden">
+  <header id="main-header"></header>
+  <main class="w-full max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold text-brand-dark mb-2">lek. Michał Zagórski</h1>
+    <h2 class="text-xl text-brand mb-6">Ortopeda, w trakcie specjalizacji</h2>
+    <img src="assets/doctors/zagorski-tall.png" alt="lek. Michał Zagórski" class="w-48 rounded-2xl mb-8 object-cover">
+    <div class="text-gray-700 leading-relaxed space-y-4">
+      <p>Lek. Michał Zagórski jest lekarzem w trakcie specjalizacji z ortopedii i traumatologii narządu ruchu. Ukończył studia na Uniwersytecie Medycznym w Lublinie, a już w czasie nauki kierował swoje zainteresowania w stronę nowoczesnych metod diagnostyki i leczenia schorzeń układu ruchu.Od początku kariery konsekwentnie poszerza swoją wiedzę oraz doskonali umiejętności praktyczne, uczestnicząc w licznych kursach, szkoleniach i konferencjach – zarówno w Polsce, jak i za granicą. Szczególną uwagę poświęca diagnostyce ultrasonograficznej, dzięki której możliwe jest szybkie i precyzyjne rozpoznawanie urazów oraz chorób stawów i tkanek miękkich. Interesuje się także wykonywaniem iniekcji dostawowych pod kontrolą USG, co pozwala zwiększyć skuteczność i bezpieczeństwo terapii.W obszarze jego praktyki znajdują się również artroskopia oraz nowoczesne, małoinwazyjne metody leczenia urazów i schorzeń narządu ruchu. Jego celem jest nie tylko przywrócenie pacjentom sprawności fizycznej, ale także poprawa jakości ich życia poprzez indywidualnie dopasowane metody terapii.Pacjenci cenią go za profesjonalizm, rzetelność oraz empatyczne podejście. Zawsze stara się dokładnie wyjaśnić diagnozę i możliwości leczenia, angażując pacjenta w proces terapeutyczny. W codziennej praktyce kieruje się zasadą, że skuteczna opieka medyczna wymaga nie tylko wiedzy i doświadczenia, ale także otwartości i zrozumienia dla potrzeb drugiego człowieka.</p>
+    </div>
+  </main>
+  <footer id="main-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
+      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
+      if (window.reinitMobileMenu) window.reinitMobileMenu();
+    });
+  </script>
+</body>
+</html>
