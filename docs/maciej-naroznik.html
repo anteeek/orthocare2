@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maciej Narożnik – OrthoCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-brand-light min-h-screen overflow-x-hidden">
+  <header id="main-header"></header>
+  <main class="w-full max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold text-brand-dark mb-2">lek. Maciej Narożnik</h1>
+    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu</h2>
+    <img src="assets/doctors/naroznik.png" alt="lek. Maciej Narożnik" class="w-48 rounded-2xl mb-8 object-cover">
+    <div class="text-gray-700 leading-relaxed space-y-4">
+      <p>Lek. Maciej Narożnik jest absolwentem Uniwersytetu Medycznego w Lublinie. Szkolenie specjalizacyjne odbywał w Mazowieckim Szpitalu Specjalistycznym w Radomiu, gdzie zdobywał doświadczenie na Oddziale Chirurgii Urazowo-Ortopedycznej i Szpitalnym Oddziale Ratunkowym. Obecnie pełni funkcję starszego asystenta w Mazowieckim Szpitalu Specjalistycznym.</p>
+      <p>Specjalizuje się w diagnostyce i leczeniu schorzeń stawu kolanowego oraz stopy i stawu skokowego. Wykonuje zabiegi artroskopowe, korekcje deformacji, leczenie urazów sportowych oraz iniekcje dostawowe i regeneracyjne (PRP, kwas hialuronowy). Łączy nowoczesne podejście z doświadczeniem szpitalnym, koncentrując się na bezpiecznym i skutecznym leczeniu zachowawczym oraz operacyjnym.</p>
+    </div>
+  </main>
+  <footer id="main-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
+      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
+      if (window.reinitMobileMenu) window.reinitMobileMenu();
+    });
+  </script>
+</body>
+</html>

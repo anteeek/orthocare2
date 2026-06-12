@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karol Baliński – OrthoCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-brand-light min-h-screen overflow-x-hidden">
+  <header id="main-header"></header>
+  <main class="w-full max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold text-brand-dark mb-2">lek. Karol Baliński</h1>
+    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu, ortopeda dziecięcy</h2>
+    <img src="assets/doctors/balinski.png" alt="lek. Karol Baliński" class="w-48 rounded-2xl mb-8 object-cover">
+    <div class="text-gray-700 leading-relaxed space-y-4">
+      <p>Lek. Karol Baliński jest absolwentem Uniwersytetu Medycznego w Łodzi, specjalistą ortopedii i traumatologii narządu ruchu. Pełni funkcję starszego asystenta w Oddziale Urazowo-Ortopedycznym Świętokrzyskiego Centrum Pediatrii w Kielcach. Specjalizuje się w leczeniu urazów oraz schorzeń narządu ruchu u dzieci i młodzieży, w tym w diagnozowaniu wad postawy i zaburzeń wieku rozwojowego.</p>
+      <p>Jest doświadczonym specjalistą w zakresie badań preluksacyjnych stawów biodrowych u niemowląt i małych dzieci, a także diagnostyki i leczenia urazów ortopedycznych wieku rozwojowego. W codziennej pracy łączy profesjonalizm z empatycznym podejściem, budując relacje oparte na zaufaniu zarówno z dziećmi, jak i z ich rodzicami.</p>
+    </div>
+  </main>
+  <footer id="main-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
+      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
+      if (window.reinitMobileMenu) window.reinitMobileMenu();
+    });
+  </script>
+</body>
+</html>
