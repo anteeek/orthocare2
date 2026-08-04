@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grzegorz Glazer – OrthoCare</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/dist/output.css" rel="stylesheet">
+  <title>lek. Grzegorz Glazer – OrthoCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-brand-light min-h-screen overflow-x-hidden">
+<body>
   <header id="main-header"></header>
-  <main class="w-full max-w-3xl mx-auto px-6 py-12">
-    <h1 class="text-4xl font-bold text-brand-dark mb-2">dr n. med. Grzegorz Glazer</h1>
-    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu</h2>
-    <img src="assets/doctors/glazer.png" alt="dr n. med. Grzegorz Glazer" class="w-48 rounded-2xl mb-8 object-cover">
-    <div class="text-gray-700 leading-relaxed space-y-4">
-      <p>Dr Grzegorz Glazer jest absolwentem Uniwersytetu Medycznego w Lublinie, który ukończył w 2011 roku z wyróżnieniem. Po ukończeniu stażu rozpoczął pracę w Klinice Ortopedii i Traumatologii SPSK nr 4 w Lublinie, gdzie pracuje do dziś jako starszy asystent. W 2019 roku uzyskał tytuł doktora nauk medycznych, broniąc rozprawy pt. "Wpływ jonów i drobin metali na trwałość protezoplastyki metal-metal".</p>
+  <main class="doctor-profile">
+    <div class="wrap">
+      <a href="zespol.html" class="doctor-back">← Wróć do lekarzy</a>
+      <div class="doctor-profile__grid">
+        <div class="doctor-profile__content">
+          <h1 class="doctor-profile__name">lek. Grzegorz Glazer</h1>
+          <p class="doctor-profile__spec">Specjalista ortopedii i traumatologii narządu ruchu</p>
+          <div class="doctor-profile__bio"><p>Dr Grzegorz Glazer jest absolwentem Uniwersytetu Medycznego w Lublinie, który ukończył w 2011 roku z wyróżnieniem. Po ukończeniu stażu rozpoczął pracę w Klinice Ortopedii i Traumatologii SPSK nr 4 w Lublinie, gdzie pracuje do dziś jako starszy asystent. W 2019 roku uzyskał tytuł doktora nauk medycznych, broniąc rozprawy pt. "Wpływ jonów i drobin metali na trwałość protezoplastyki metal-metal".</p>
       <p>Specjalizuje się w diagnostyce i leczeniu schorzeń stawu biodrowego i kolanowego, ze szczególnym uwzględnieniem kwalifikacji do endoprotezoplastyki. Posiada bogate doświadczenie w prowadzeniu pacjentów po zabiegach wszczepienia endoprotez, monitorowaniu ich stanu klinicznego oraz leczeniu powikłań. W swojej praktyce wykorzystuje również ultrasonografię ortopedyczną.</p>
-      <p>Od lat uczestniczy w ogólnopolskich i międzynarodowych konferencjach naukowych, a także kursach specjalistycznych z zakresu protezoplastyki i nowoczesnych metod leczenia zachowawczego. W codziennej pracy wyróżnia się spokojem, precyzją i kompleksowym podejściem do pacjenta.</p>
+      <p>Od lat uczestniczy w ogólnopolskich i międzynarodowych konferencjach naukowych, a także kursach specjalistycznych z zakresu protezoplastyki i nowoczesnych metod leczenia zachowawczego. W codziennej pracy wyróżnia się spokojem, precyzją i kompleksowym podejściem do pacjenta.</p></div>
+        </div>
+        <div class="doctor-profile__photo-wrap">
+          <picture><source type="image/webp" srcset="assets/doctors/profile/glazer.webp"><img src="assets/doctors/profile/glazer.jpg" alt="lek. Grzegorz Glazer" class="doctor-profile__photo" decoding="async" width="1000" height="1333"></picture>
+        </div>
+      </div>
     </div>
   </main>
   <footer id="main-footer"></footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script>
     fetch('index.html').then(r=>r.text()).then(html=>{
       const doc = new DOMParser().parseFromString(html, 'text/html');

@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bartosz Dominik – OrthoCare</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/dist/output.css" rel="stylesheet">
+  <title>lek. Bartosz Dominik – OrthoCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-brand-light min-h-screen overflow-x-hidden">
+<body>
   <header id="main-header"></header>
-  <main class="w-full max-w-3xl mx-auto px-6 py-12">
-    <h1 class="text-4xl font-bold text-brand-dark mb-2">lek. Bartosz Dominik</h1>
-    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu</h2>
-    <img src="assets/doctors/dominik.png" alt="lek. Bartosz Dominik" class="w-48 rounded-2xl mb-8 object-cover">
-    <div class="text-gray-700 leading-relaxed space-y-4">
-      <p>Lek. Bartosz Dominik to doświadczony ortopeda specjalizujący się w leczeniu schorzeń barku i kolana. Jest absolwentem Warszawskiego Uniwersytetu Medycznego. Od 2012 roku związany z Carolina Medical Center w Warszawie. W latach 2018–2021 współpracował z MIRAI Clinic w Warszawie i Otwocku.</p>
+  <main class="doctor-profile">
+    <div class="wrap">
+      <a href="zespol.html" class="doctor-back">← Wróć do lekarzy</a>
+      <div class="doctor-profile__grid">
+        <div class="doctor-profile__content">
+          <h1 class="doctor-profile__name">lek. Bartosz Dominik</h1>
+          <p class="doctor-profile__spec">Specjalista ortopedii i traumatologii narządu ruchu</p>
+          <div class="doctor-profile__bio"><p>Lek. Bartosz Dominik to doświadczony ortopeda specjalizujący się w leczeniu schorzeń barku i kolana. Jest absolwentem Warszawskiego Uniwersytetu Medycznego. Od 2012 roku związany z Carolina Medical Center w Warszawie. W latach 2018–2021 współpracował z MIRAI Clinic w Warszawie i Otwocku.</p>
       <p>W 2019 roku odbył sześciomiesięczny staż naukowy w renomowanej klinice Gelenkpunkt Privatklinik Hochrum w Innsbrucku, prowadzonej przez prof. Christiana Finka, gdzie zdobywał doświadczenie w artroskopii oraz endoprotezoplastyce barku i kolana. Jest instruktorem kursów kadawerowych oraz prowadzi szkolenia dla lekarzy z zakresu chirurgii stawu ramiennego i kolanowego.</p>
-      <p>W swojej pracy koncentruje się na leczeniu uszkodzeń stożka rotatorów, niestabilności stawu barkowego oraz zmian zwyrodnieniowych. Członek PTOiTr, PTBiŁ, PTArtro oraz AGA – niemieckojęzycznego towarzystwa chirurgii stawów. Ceniony za nowoczesne podejście, precyzję i dobry kontakt z pacjentem.</p>
+      <p>W swojej pracy koncentruje się na leczeniu uszkodzeń stożka rotatorów, niestabilności stawu barkowego oraz zmian zwyrodnieniowych. Członek PTOiTr, PTBiŁ, PTArtro oraz AGA – niemieckojęzycznego towarzystwa chirurgii stawów. Ceniony za nowoczesne podejście, precyzję i dobry kontakt z pacjentem.</p></div>
+        </div>
+        <div class="doctor-profile__photo-wrap">
+          <picture><source type="image/webp" srcset="assets/doctors/profile/dominik.webp"><img src="assets/doctors/profile/dominik.jpg" alt="lek. Bartosz Dominik" class="doctor-profile__photo" decoding="async" width="1000" height="1333"></picture>
+        </div>
+      </div>
     </div>
   </main>
   <footer id="main-footer"></footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script>
     fetch('index.html').then(r=>r.text()).then(html=>{
       const doc = new DOMParser().parseFromString(html, 'text/html');

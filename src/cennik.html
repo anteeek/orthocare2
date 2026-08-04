@@ -3,894 +3,927 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Usługi i cennik – OrthoCare</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/dist/output.css" rel="stylesheet">
+  <title>Usługi i cennik – OrthoCare Radom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="dns-prefetch" href="https://platform.docplanner.com">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="css/legacy.css" rel="stylesheet">
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-brand-light min-h-screen overflow-x-hidden">
-  <!-- Header copied from index.html -->
-  <header id="main-header"></header>
-  
+<body>
 
-  <main class="w-full max-w-full overflow-x-hidden">
-    <!-- Services Price List -->
-    <section class="w-full bg-white relative">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-10 text-center">Usługi i cennik</h1>
+<header id="site-header">
+<nav class="nav">
+  <div class="nav__wrap">
+    <a href="index.html" class="nav__logo">
+      <picture><source type="image/webp" srcset="assets/logo-orthocare.webp"><img src="assets/logo-orthocare.png" alt="OrthoCare" width="180" height="38" decoding="async" ></picture>
+    </a>
+    <ul class="nav__links" id="navLinks">
+        <li><a href="klinika.html">O nas</a></li>
+        <li><a href="zespol.html">Lekarze</a></li>
+        <li><a href="cennik.html" class="is-active">Usługi i cennik</a></li>
+        <li><a href="zabiegi.html">Zabiegi</a></li>
+        <li><a href="kriolezja.html">Kriolezja</a></li>
+    </ul>
+    <div class="nav__actions">
+      <div class="nav__social">
+        <a href="https://www.instagram.com/klinika_orthocare/" target="_blank" class="nav-social-btn" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" target="_blank" class="nav-social-btn" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+      <a href="kontakt.html" class="nav__btn-kontakt">Kontakt</a>
+      <button type="button" class="nav__btn-rezerwuj umow-wizyte-btn">Umów wizytę</button>
+    </div>
+    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="klinika.html">O nas</a>
+    <a href="zespol.html">Lekarze</a>
+    <a href="cennik.html" class="is-active">Usługi i cennik</a>
+    <a href="zabiegi.html">Zabiegi</a>
+    <a href="kriolezja.html">Kriolezja</a>
+    <a href="kontakt.html">Kontakt</a>
+    <div class="nav-cta-wrap">
+      <button type="button" class="btn btn--primary umow-wizyte-btn" style="width:100%">Umów wizytę</button>
+    </div>
+  </div>
+</nav>
+</header>
 
-        <!-- Service Items -->
-        <div class="space-y-4">
-          <!-- Konsultacja ortopedyczna -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('konsultacja')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Konsultacja ortopedyczna</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">250 – 300 zł</span>
-                <svg id="icon-konsultacja" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-konsultacja" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+<main>
+<div class="page-section__head">
+  <div class="wrap-inner">
+    <h1 class="page-title">Usługi i cennik</h1>
+  </div>
+</div>
+<div class="page-section__body">
+  <div class="wrap-inner wrap-inner--narrow legacy-content">
+<!-- Services Price List -->
+<section class="accordion-page">
+  <div class="service-list">
+    <!-- Konsultacja ortopedyczna -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('konsultacja')">
+        <div class="service-header__main">
+          <h3>Konsultacja ortopedyczna</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">250 – 300 zł</span>
+          <svg class="service-header__chevron" id="icon-konsultacja" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-konsultacja" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Konsultacja ortopedyczna to wizyta u specjalisty zajmującego się diagnostyką i leczeniem
                   schorzeń narządu ruchu – w tym stawów, mięśni, kości oraz kręgosłupa.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Podczas wizyty lekarz przeprowadza dokładny wywiad i badanie kliniczne, ocenia
                   dolegliwości pacjenta oraz – w razie potrzeby – zleca dodatkowe badania obrazowe (np. RTG,
                   USG, rezonans magnetyczny).
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   W trakcie konsultacji omawiany jest plan leczenia: zachowawczy (np. farmakoterapia,
                   fizjoterapia) lub zabiegowy, jeśli stan zdrowia tego wymaga.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Celem wizyty jest nie tylko złagodzenie objawów, ale przede wszystkim znalezienie i
                   wyeliminowanie ich przyczyny.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Wskazana jest w przypadku urazów, przewlekłego bólu stawów lub kręgosłupa, ograniczenia
                   ruchomości, zmian zwyrodnieniowych i wszelkich niepokojących objawów związanych z
                   układem kostno-stawowym.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Konsultacja ortopedyczna z badaniem USG -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('konsultacja-usg')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Konsultacja ortopedyczna z badaniem USG</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">300 – 350 zł</span>
-                <svg id="icon-konsultacja-usg" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-konsultacja-usg" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Konsultacja ortopedyczna z badaniem USG -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('konsultacja-usg')">
+        <div class="service-header__main">
+          <h3>Konsultacja ortopedyczna z badaniem USG</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">300 – 350 zł</span>
+          <svg class="service-header__chevron" id="icon-konsultacja-usg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-konsultacja-usg" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Wizyta u ortopedy połączona z badaniem ultrasonograficznym (USG) to rozszerzona forma
                   diagnostyki narządu ruchu. Po zebraniu wywiadu i przeprowadzeniu badania klinicznego
                   lekarz wykonuje USG – nieinwazyjne, obrazowe badanie tkanek miękkich, stawów, ścięgien i
                   mięśni.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Umożliwia ono precyzyjną ocenę przyczyny bólu, obrzęku czy ograniczenia ruchu.
                   Badanie USG wykonywane jest na miejscu, podczas tej samej wizyty, co pozwala od razu
                   postawić diagnozę i wdrożyć odpowiednie leczenie – farmakologiczne, fizjoterapeutyczne lub
                   zabiegowe.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Dzięki temu konsultacja jest kompleksowa i pozwala uniknąć niepotrzebnej
                   zwłoki w rozpoczęciu terapii. To idealna opcja w przypadku dolegliwości, które wymagają szybkiej i dokładnej oceny
                   obrazowej – takich jak urazy, zmiany zwyrodnieniowe czy zapalne.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Wizyta kontrolna -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('wizyta-kontrolna')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Wizyta kontrolna</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">200 – 250 zł</span>
-                <svg id="icon-wizyta-kontrolna" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-wizyta-kontrolna" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Wizyta kontrolna -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('wizyta-kontrolna')">
+        <div class="service-header__main">
+          <h3>Wizyta kontrolna</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">200 – 250 zł</span>
+          <svg class="service-header__chevron" id="icon-wizyta-kontrolna" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-wizyta-kontrolna" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Wizyta kontrolna to spotkanie z lekarzem mające na celu ocenę postępów leczenia,
                   omówienie wyników badań lub dalsze prowadzenie pacjenta po zabiegu, urazie bądź
                   rozpoczętej terapii.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Lekarz analizuje przebieg dotychczasowego leczenia, reaguje na
                   ewentualne trudności i wprowadza niezbędne modyfikacje w planie terapeutycznym.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   W zależności od potrzeb, w trakcie wizyty może być wykonane badanie fizykalne, omówione
                   zdjęcia RTG, USG lub inne wyniki, a także zaplanowane kolejne etapy leczenia, w tym
                   fizjoterapia lub zabiegi.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   To ważny element procesu leczenia — pozwalający monitorować efekty terapii, dbać o
                   bezpieczeństwo pacjenta i skutecznie prowadzić go do pełnego powrotu do zdrowia.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Kwalifikacja do zabiegu -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('kwalifikacja')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Kwalifikacja do zabiegu</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">350 zł</span>
-                <svg id="icon-kwalifikacja" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-kwalifikacja" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Kwalifikacja do zabiegu -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('kwalifikacja')">
+        <div class="service-header__main">
+          <h3>Kwalifikacja do zabiegu</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">350 zł</span>
+          <svg class="service-header__chevron" id="icon-kwalifikacja" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-kwalifikacja" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Kwalifikacja do zabiegu to konsultacja lekarska, której celem jest dokładna ocena, czy pacjent
                   może zostać zakwalifikowany do zaplanowanego leczenia operacyjnego.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   W trakcie wizyty lekarz analizuje dotychczasową dokumentację medyczną, przeprowadza szczegółowy wywiad
                   i — w razie potrzeby — wykonuje badanie przedmiotowe lub zleca dodatkowe badania
                   diagnostyczne.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Podczas konsultacji omawiane są wskazania i potencjalne przeciwwskazania do planowanego
                   zabiegu, a także ryzyko i korzyści z nim związane.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Pacjent otrzymuje pełną informację o dalszych krokach postępowania i możliwym przebiegu leczenia. Wizyta jest również okazją do
                   zadania pytań i rozwiania wszelkich wątpliwości.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Konsultacja ortopedyczna dziecięca -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('konsultacja-dziecieca')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                </div>
-                <div><h3 class="text-xl font-semibold text-gray-800">Konsultacja ortopedyczna dziecięca</h3></div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">300 zł</span>
-                <svg id="icon-konsultacja-dziecieca" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </div>
-            </button>
-            <div id="content-konsultacja-dziecieca" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">Konsultacja ortopedyczna dziecięca to wizyta u specjalisty zajmującego się diagnostyką, profilaktyką oraz leczeniem wad postawy i schorzeń narządu ruchu u niemowląt, dzieci oraz młodzieży. Podczas wizyty lekarz przeprowadza dokładny wywiad z rodzicem oraz badanie kliniczne, oceniając rozwój układu kostno-stawowego, symetrię ciała, sposób poruszania się oraz zakres ruchomości stawów dziecka. W razie potrzeby specjalista zleca dodatkowe badania obrazowe dopasowane do wieku pacjenta (np. USG stawów biodrowych u niemowląt, RTG).</p>
-                <p class="text-gray-700 leading-relaxed mb-4">W trakcie konsultacji omawiany jest indywidualny plan postępowania: korekcja wad postawy, odpowiednio dobrana fizjoterapia, zaopatrzenie ortopedyczne lub leczenie zabiegowe, jeśli stan zdrowia tego wymaga. Celem wizyty jest nie tylko wczesne wykrycie i leczenie nieprawidłowości, ale przede wszystkim zapewnienie dziecku warunków do prawidłowego i bezbolesnego rozwoju fizycznego.</p>
-                <p class="text-gray-700 leading-relaxed">Wskazana jest w przypadku podejrzenia wad postawy (np. skolioza, płaskostopie, koślawość kolan), asymetrii u niemowląt, zaburzeń chodu, bólów wzrostowych, a także po przebytych urazach i kontuzjach sportowych.</p>
-              </div>
-            </div>
-          </div>
+    <!-- Konsultacja ortopedyczna dziecięca -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('konsultacja-dziecieca')">
+        <div class="service-header__main">
+          <h3>Konsultacja ortopedyczna dziecięca</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">300 zł</span>
+          <svg class="service-header__chevron" id="icon-konsultacja-dziecieca" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-konsultacja-dziecieca" class="service-content hidden">
+        <div class="service-content__body">
+          <p>Konsultacja ortopedyczna dziecięca to wizyta u specjalisty zajmującego się diagnostyką, profilaktyką oraz leczeniem wad postawy i schorzeń narządu ruchu u niemowląt, dzieci oraz młodzieży. Podczas wizyty lekarz przeprowadza dokładny wywiad z rodzicem oraz badanie kliniczne, oceniając rozwój układu kostno-stawowego, symetrię ciała, sposób poruszania się oraz zakres ruchomości stawów dziecka. W razie potrzeby specjalista zleca dodatkowe badania obrazowe dopasowane do wieku pacjenta (np. USG stawów biodrowych u niemowląt, RTG).</p>
+          <p>W trakcie konsultacji omawiany jest indywidualny plan postępowania: korekcja wad postawy, odpowiednio dobrana fizjoterapia, zaopatrzenie ortopedyczne lub leczenie zabiegowe, jeśli stan zdrowia tego wymaga. Celem wizyty jest nie tylko wczesne wykrycie i leczenie nieprawidłowości, ale przede wszystkim zapewnienie dziecku warunków do prawidłowego i bezbolesnego rozwoju fizycznego.</p>
+          <p>Wskazana jest w przypadku podejrzenia wad postawy (np. skolioza, płaskostopie, koślawość kolan), asymetrii u niemowląt, zaburzeń chodu, bólów wzrostowych, a także po przebytych urazach i kontuzjach sportowych.</p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Blokada nerwu obwodowego -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('blokada-nerwu')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 16.318l4.792 4.792 4.792-4.792m0 0l-4.792-4.792m4.792 4.792H3" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Blokada nerwu obwodowego</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">200 – 250 zł</span>
-                <svg id="icon-blokada-nerwu" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-blokada-nerwu" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Blokada nerwu obwodowego -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('blokada-nerwu')">
+        <div class="service-header__main">
+          <h3>Blokada nerwu obwodowego</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">200 – 250 zł</span>
+          <svg class="service-header__chevron" id="icon-blokada-nerwu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-blokada-nerwu" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Blokada nerwu obwodowego to procedura medyczna polegająca na precyzyjnym podaniu
                   środka przeciwbólowego i przeciwzapalnego w okolice konkretnego nerwu
                   odpowiedzialnego za przewodzenie bólu w danej części ciała.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg wykonywany jest pod kontrolą USG, co zapewnia wysoką skuteczność oraz bezpieczeństwo iniekcji.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg ma na celu czasowe zablokowanie przekazywania bodźców bólowych, co przynosi
                   pacjentowi znaczną ulgę — zwłaszcza w przypadku przewlekłych zespołów bólowych,
                   neuralgii czy stanów zapalnych struktur okołonerwowych.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Blokada może być również wykorzystywana jako element diagnostyczny lub przygotowanie do dalszego leczenia, np.
                   rehabilitacji. Dzięki zastosowaniu nowoczesnej techniki obrazowania ultrasonograficznego lekarz
                   dokładnie lokalizuje nerw, minimalizując ryzyko powikłań i zwiększając skuteczność
                   procedury.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Blokada przykręgosłupowa -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('blokada-przykręgosłupowa')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Blokada przykręgosłupowa</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">600 zł</span>
-                <svg id="icon-blokada-przykręgosłupowa" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-blokada-przykręgosłupowa" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Blokada przykręgosłupowa -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('blokada-przykręgosłupowa')">
+        <div class="service-header__main">
+          <h3>Blokada przykręgosłupowa</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">600 zł</span>
+          <svg class="service-header__chevron" id="icon-blokada-przykręgosłupowa" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-blokada-przykręgosłupowa" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Blokada przykręgosłupowa to procedura medyczna polegająca na precyzyjnym podaniu leku
                   przeciwbólowego i przeciwzapalnego w okolice nerwów rdzeniowych wychodzących z
                   kręgosłupa.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg ten wykonywany jest pod kontrolą USG, co pozwala na dokładne
                   zlokalizowanie miejsca podania i zwiększa bezpieczeństwo oraz skuteczność leczenia.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Celem blokady jest zmniejszenie bólu pochodzenia kręgosłupowego — zarówno ostrego, jak i
                   przewlekłego — który może promieniować do kończyn lub być związany ze stanami
                   zapalnymi korzeni nerwowych, dyskopatią czy zespołem bólowym kręgosłupa.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg przynosi szybką ulgę w bólu, umożliwiając pacjentowi powrót do codziennego
                   funkcjonowania oraz skuteczniejsze prowadzenie rehabilitacji.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Blokada przykręgosłupowa może być jednorazową procedurą lub wykonywana w serii,
                   zależnie od wskazań medycznych i reakcji pacjenta na leczenie.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Osocze bogatopłytkowe Xerthra PRP -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('xerthra-prp')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Osocze bogatopłytkowe Xerthra PRP</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">800 zł</span>
-                <svg id="icon-xerthra-prp" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-xerthra-prp" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Osocze bogatopłytkowe Xerthra PRP -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('xerthra-prp')">
+        <div class="service-header__main">
+          <h3>Osocze bogatopłytkowe Xerthra PRP</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">800 zł</span>
+          <svg class="service-header__chevron" id="icon-xerthra-prp" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-xerthra-prp" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Terapia osoczem bogatopłytkowym (PRP) jest nowoczesną metodą wspierającą regenerację
                   tkanek i przyspieszającą procesy gojenia.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg polega na wstrzyknięciu, pod kontrolą USG, odpowiednio przygotowanego koncentratu osocza bogatopłytkowego bezpośrednio w
                   miejsce wymagające leczenia – najczęściej do stawu lub okolic objętych urazem.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Osocze uzyskiwane jest z krwi pacjenta, co czyni terapię w pełni bezpieczną i naturalną dla
                   organizmu. Do pozyskiwania PRP wykorzystujemy nowoczesny zestaw Xerthra™ PRP kit,
                   który umożliwia uzyskanie preparatu o bardzo wysokiej koncentracji płytek krwi – nawet do
                   13 razy większej niż wyjściowo.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zawarte w nim czynniki wzrostu pobudzają komórki do odbudowy, stymulując regenerację i zmniejszając stan zapalny oraz dolegliwości bólowe.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg można wykonać jednorazowo, jednak dla pełnego efektu zaleca się wykonanie 2 – 4
                   serii co kilka tygodni. Efekty utrzymują się przez kilka tygodni.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Osocze bogatopłytkowe Plasma X -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('plasma-x')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Osocze bogatopłytkowe Plasma X</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">1000 zł</span>
-                <svg id="icon-plasma-x" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-plasma-x" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Osocze bogatopłytkowe Plasma X -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('plasma-x')">
+        <div class="service-header__main">
+          <h3>Osocze bogatopłytkowe Plasma X</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">1000 zł</span>
+          <svg class="service-header__chevron" id="icon-plasma-x" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-plasma-x" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Terapia osoczem bogatopłytkowym (PRP) jest nowoczesną metodą wspierającą regenerację
                   tkanek i przyspieszającą procesy gojenia.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg polega na wstrzyknięciu, pod kontrolą USG, odpowiednio przygotowanego koncentratu osocza bogatopłytkowego bezpośrednio w
                   miejsce wymagające leczenia – najczęściej do stawu lub okolic objętych urazem.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Preparat Plasma X wyróżnia się wysoką jakością i stabilnością, co może mieć znaczenie w
                   przypadku bardziej wymagających wskazań.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg można wykonać jednorazowo, jednak dla pełnego efektu zaleca się wykonanie 2 – 4
                   serii co kilka tygodni. Efekty utrzymują się przez kilka tygodni.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Kwas hialuronowy Biolevox HA mini -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('biolevox-mini')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Kwas hialuronowy Biolevox HA mini</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">250 zł</span>
-                <svg id="icon-biolevox-mini" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-biolevox-mini" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Osocze bogatopłytkowe ACP Arthrex -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('acp-arthrex')">
+        <div class="service-header__main">
+          <h3>Osocze bogatopłytkowe ACP Arthrex</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">1000 zł</span>
+          <svg class="service-header__chevron" id="icon-acp-arthrex" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-acp-arthrex" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
+                  Terapia osoczem bogatopłytkowym (PRP) jest nowoczesną metodą wspierającą regenerację
+                  tkanek i przyspieszającą procesy gojenia.
+          </p>
+          <p>
+                  Zabieg polega na wstrzyknięciu, pod kontrolą USG, odpowiednio przygotowanego koncentratu osocza bogatopłytkowego bezpośrednio w
+                  miejsce wymagające leczenia – najczęściej do stawu lub okolic objętych urazem.
+          </p>
+          <p>
+                  Osocze uzyskiwane jest z krwi pacjenta, co czyni terapię w pełni bezpieczną i naturalną dla
+                  organizmu. Do pozyskiwania preparatu wykorzystujemy zaawansowany system ACP (Autologous Conditioned Plasma) firmy Arthrex,
+                  oparty na unikalnej technologii podwójnej strzykawki, która umożliwia uzyskanie wysokiego stężenia czynników wzrostu
+                  przy minimalnej ilości leukocytów.
+          </p>
+          <p>
+                  Zawarte w nim czynniki wzrostu pobudzają komórki do odbudowy, stymulując regenerację i zmniejszając stan zapalny oraz dolegliwości bólowe.
+          </p>
+          <p>
+                  Zabieg można wykonać jednorazowo, jednak dla pełnego efektu zaleca się wykonanie serii 2–3 iniekcji co kilka tygodni.
+                  Efekty utrzymują się przez wiele miesięcy.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kwas hialuronowy Biolevox HA mini -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('biolevox-mini')">
+        <div class="service-header__main">
+          <h3>Kwas hialuronowy Biolevox HA mini</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">250 zł</span>
+          <svg class="service-header__chevron" id="icon-biolevox-mini" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-biolevox-mini" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Biolevox HA Mini to preparat zawierający hialuronian sodu – naturalny składnik mazi
                   stawowej, odpowiedzialny za jej lepkość i zdolność do amortyzowania ruchów w stawie.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Podanie leku ma na celu poprawę ruchomości, zmniejszenie bólu i spowolnienie dalszej
                   degeneracji stawu, zwłaszcza na wczesnym etapie choroby zwyrodnieniowej.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Ze względu na mniejszą objętość, preparat doskonale sprawdza się w terapii mniejszych
                   stawów, takich jak nadgarstek, staw skokowy, bark czy staw skroniowo-żuchwowy.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Iniekcja wykonywana jest bezpośrednio do stawu – precyzyjnie, pod kontrolą USG – co zwiększa
                   skuteczność i bezpieczeństwo zabiegu.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Kwas hialuronowy Biolevox HA 2,2% -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('biolevox-22')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Kwas hialuronowy Biolevox HA 2,2%</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">300 zł</span>
-                <svg id="icon-biolevox-22" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-biolevox-22" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Kwas hialuronowy Biolevox HA 2,2% -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('biolevox-22')">
+        <div class="service-header__main">
+          <h3>Kwas hialuronowy Biolevox HA 2,2%</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">300 zł</span>
+          <svg class="service-header__chevron" id="icon-biolevox-22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-biolevox-22" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Kwas hialuronowy (hialuronian sodu) to naturalny składnik mazi stawowej, odpowiadający za
                   jej lepkość, elastyczność i zdolność do amortyzowania ruchów.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Dzięki swoim właściwościom smarującym i odżywczym wspiera regenerację chrząstki stawowej, poprawia ruchomość
                   stawu i znacząco zmniejsza ból towarzyszący zmianom zwyrodnieniowym.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Preparaty o stężeniu 2,2% są przeznaczone przede wszystkim do leczenia większych stawów
                   – takich jak kolano czy biodro – w których wymagany jest intensywniejszy efekt
                   terapeutyczny.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co
                   zwiększa precyzję i bezpieczeństwo zabiegu. Dla uzyskania pełnego efektu zaleca się wykonanie serii trzech wstrzyknięć w odstępach
                   około dwóch tygodni.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Kwas hialuronowy Biolevox HA ONE -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('biolevox-one')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Kwas hialuronowy Biolevox HA ONE</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">700 zł</span>
-                <svg id="icon-biolevox-one" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-biolevox-one" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Kwas hialuronowy Biolevox HA ONE -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('biolevox-one')">
+        <div class="service-header__main">
+          <h3>Kwas hialuronowy Biolevox HA ONE</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">700 zł</span>
+          <svg class="service-header__chevron" id="icon-biolevox-one" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-biolevox-one" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Biolevox HA ONE to preparat z wysokostężonym kwasem hialuronowym (hialuronianem
                   sodu), wykorzystywany w leczeniu zmian zwyrodnieniowych stawów.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Dzięki większemu stężeniu substancji aktywnej wystarczy jeden zastrzyk, aby osiągnąć pełny efekt
                   terapeutyczny.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Kwas hialuronowy działa ochronnie na chrząstkę stawową, poprawia właściwości smarne
                   mazi stawowej, zwiększa komfort ruchu i zmniejsza dolegliwości bólowe.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg wykonywany jest precyzyjnie pod kontrolą USG, co zwiększa jego skuteczność i bezpieczeństwo.
                   Biolevox HA ONE jest szczególnie polecany pacjentom, którzy oczekują wygodnego i
                   długotrwałego efektu terapii w jednej dawce.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Kwas hialuronowy Biolevox HA Tendon -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('biolevox-tendon')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Kwas hialuronowy Biolevox HA Tendon</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">400 zł</span>
-                <svg id="icon-biolevox-tendon" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-biolevox-tendon" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Kwas hialuronowy Biolevox HA Tendon -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('biolevox-tendon')">
+        <div class="service-header__main">
+          <h3>Kwas hialuronowy Biolevox HA Tendon</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">400 zł</span>
+          <svg class="service-header__chevron" id="icon-biolevox-tendon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-biolevox-tendon" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Biolevox HA Tendon to preparat z kwasem hialuronowym (1,6%) przeznaczony do iniekcji w
                   okolice ścięgien lub do pochewki ścięgna.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Działa nawilżająco i ochronnie na tkanki miękkie otaczające ścięgno, wspierając proces regeneracji po urazach i przeciążeniach.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zwiększając stężenie naturalnie występującego hialuronianu, preparat tworzy odpowiednie
                   środowisko do odbudowy tkanek, zmniejsza tarcie i poprawia ślizg struktur ścięgnistych.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg pozwala złagodzić ból oraz przywrócić sprawność w obrębie zajętego obszaru.
                   Podanie wykonywane jest pod kontrolą USG, co zapewnia precyzję i bezpieczeństwo terapii.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Cartinorm Extra -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('cartinorm')">
-              <div class="flex items-center"><div class="text-brand mr-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg></div><div><h3 class="text-xl font-semibold text-gray-800">Kwas hialuronowy Cartinorm Extra (2,4%)</h3></div></div>
-              <div class="flex items-center"><span class="text-2xl font-bold text-brand mr-4">220 zł</span><svg id="icon-cartinorm" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
-            </button>
-            <div id="content-cartinorm" class="service-content hidden px-6 pb-6"><div class="border-t border-gray-100 pt-6"><p class="text-gray-700 leading-relaxed">Kwas hialuronowy (hialuronian sodu) to naturalny składnik mazi stawowej, odpowiadający za jej lepkość, elastyczność i zdolność do amortyzowania ruchów. Dzięki swoim właściwościom smarującym i odżywczym wspiera regenerację chrząstki stawowej, poprawia ruchomość stawu i znacząco zmniejsza ból towarzyszący zmianom zwyrodnieniowym. Preparat Cartinorm Extra o podwyższonym stężeniu 2,4% zawiera kwas hialuronowy uzyskiwany metodą fermentacji bio-technologicznej, co gwarantuje jego wysoką czystość i doskonałą tolerancję. Optymalna objętość i wysoka wiskoelastyczność roztworu sprawiają, że doskonale sprawdza się on w leczeniu objawów choroby zwyrodnieniowej dużych stawów (zwłaszcza kolanowego i biodrowego), znacząco poprawiając płynność ruchu. Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co zwiększa precyzję i bezpieczeństwo zabiegu.</p></div></div>
-          </div>
+    <!-- Cartinorm Extra -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('cartinorm')">
+        <div class="service-header__main">
+          <h3>Kwas hialuronowy Cartinorm Extra (2,4%)</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">220 zł</span>
+          <svg class="service-header__chevron" id="icon-cartinorm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-cartinorm" class="service-content hidden"><div class="service-content__body"><p>Kwas hialuronowy (hialuronian sodu) to naturalny składnik mazi stawowej, odpowiadający za jej lepkość, elastyczność i zdolność do amortyzowania ruchów. Dzięki swoim właściwościom smarującym i odżywczym wspiera regenerację chrząstki stawowej, poprawia ruchomość stawu i znacząco zmniejsza ból towarzyszący zmianom zwyrodnieniowym. Preparat Cartinorm Extra o podwyższonym stężeniu 2,4% zawiera kwas hialuronowy uzyskiwany metodą fermentacji bio-technologicznej, co gwarantuje jego wysoką czystość i doskonałą tolerancję. Optymalna objętość i wysoka wiskoelastyczność roztworu sprawiają, że doskonale sprawdza się on w leczeniu objawów choroby zwyrodnieniowej dużych stawów (zwłaszcza kolanowego i biodrowego), znacząco poprawiając płynność ruchu. Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co zwiększa precyzję i bezpieczeństwo zabiegu.</p>        </div>
+      </div>
+    </div>
 
-          <!-- Optivisc 40 mg -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('optivisc-40')">
-              <div class="flex items-center"><div class="text-brand mr-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg></div><div><h3 class="text-xl font-semibold text-gray-800">Kwas hialuronowy Optivisc 40 mg</h3><p class="text-sm text-gray-500 mt-1">Terapia sekwencyjna</p></div></div>
-              <div class="flex items-center"><span class="text-2xl font-bold text-brand mr-4">350 zł</span><svg id="icon-optivisc-40" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
-            </button>
-            <div id="content-optivisc-40" class="service-content hidden px-6 pb-6"><div class="border-t border-gray-100 pt-6"><p class="text-gray-700 leading-relaxed">Kwas hialuronowy o stężeniu 2% i wysokiej masie cząsteczkowej, stworzony z myślą o pacjentach poszukujących stabilnej, długofalowej odbudowy płynu stawowego. Preparat działa progresywnie – z każdym kolejnym podaniem w serii precyzyjnie uzupełnia braki mazi stawowej, powlekając chrząstkę ochronną warstwą i stopniowo uśmierzając ból. To idealne rozwiązanie w przypadku początkowych i umiarkowanych zmian zwyrodnieniowych, które pozwala na kontrolowane, płynne przywrócenie elastyczności ruchów w stawach kolanowych lub biodrowych. Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co zwiększa precyzję i bezpieczeństwo zabiegu.</p></div></div>
-          </div>
+    <!-- Optivisc 40 mg -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('optivisc-40')">
+        <div class="service-header__main">
+          <h3>Kwas hialuronowy Optivisc 40 mg</h3>
+          <p class="service-header__note">Terapia sekwencyjna</p>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">350 zł</span>
+          <svg class="service-header__chevron" id="icon-optivisc-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-optivisc-40" class="service-content hidden"><div class="service-content__body"><p>Kwas hialuronowy o stężeniu 2% i wysokiej masie cząsteczkowej, stworzony z myślą o pacjentach poszukujących stabilnej, długofalowej odbudowy płynu stawowego. Preparat działa progresywnie – z każdym kolejnym podaniem w serii precyzyjnie uzupełnia braki mazi stawowej, powlekając chrząstkę ochronną warstwą i stopniowo uśmierzając ból. To idealne rozwiązanie w przypadku początkowych i umiarkowanych zmian zwyrodnieniowych, które pozwala na kontrolowane, płynne przywrócenie elastyczności ruchów w stawach kolanowych lub biodrowych. Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co zwiększa precyzję i bezpieczeństwo zabiegu.</p>        </div>
+      </div>
+    </div>
 
-          <!-- Optivisc Single 90 mg -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('optivisc-90')">
-              <div class="flex items-center"><div class="text-brand mr-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg></div><div><h3 class="text-xl font-semibold text-gray-800">Kwas hialuronowy Optivisc Single 90 mg</h3><p class="text-sm text-gray-500 mt-1">Intensywna terapia jednorazowa</p></div></div>
-              <div class="flex items-center"><span class="text-2xl font-bold text-brand mr-4">750 zł</span><svg id="icon-optivisc-90" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
-            </button>
-            <div id="content-optivisc-90" class="service-content hidden px-6 pb-6"><div class="border-t border-gray-100 pt-6"><p class="text-gray-700 leading-relaxed">Wysokospecjalistyczny, gęsty żel zawierający aż 90 mg strukturalnie sieciowanego kwasu hialuronowego. Dzięki zaawansowanej technologii sieciowania preparat wykazuje gigantyczną odporność na tarcie i bardzo wolno ulega rozpadowi wewnątrz organizmu. Jest to zabieg typu „one-shot” – jedno podanie zastępuje całą serię klasycznych zastrzyków. Dedykowany jest do natychmiastowej, mechanicznej amortyzacji głębokich, zaawansowanych uszkodzeń w dużych stawach. Działa jak silna poduszka ochronna, która drastycznie redukuje ból i blokuje tarcie kości o kość na wiele miesięcy. Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co zwiększa precyzję i bezpieczeństwo zabiegu.</p></div></div>
-          </div>
+    <!-- Optivisc Single 90 mg -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('optivisc-90')">
+        <div class="service-header__main">
+          <h3>Kwas hialuronowy Optivisc Single 90 mg</h3>
+          <p class="service-header__note">Intensywna terapia jednorazowa</p>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">750 zł</span>
+          <svg class="service-header__chevron" id="icon-optivisc-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-optivisc-90" class="service-content hidden"><div class="service-content__body"><p>Wysokospecjalistyczny, gęsty żel zawierający aż 90 mg strukturalnie sieciowanego kwasu hialuronowego. Dzięki zaawansowanej technologii sieciowania preparat wykazuje gigantyczną odporność na tarcie i bardzo wolno ulega rozpadowi wewnątrz organizmu. Jest to zabieg typu „one-shot” – jedno podanie zastępuje całą serię klasycznych zastrzyków. Dedykowany jest do natychmiastowej, mechanicznej amortyzacji głębokich, zaawansowanych uszkodzeń w dużych stawach. Działa jak silna poduszka ochronna, która drastycznie redukuje ból i blokuje tarcie kości o kość na wiele miesięcy. Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co zwiększa precyzję i bezpieczeństwo zabiegu.</p>        </div>
+      </div>
+    </div>
 
-          <!-- Cingal -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('cingal')">
-              <div class="flex items-center"><div class="text-brand mr-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg></div><div><h3 class="text-xl font-semibold text-gray-800">Preparat skojarzony Cingal</h3></div></div>
-              <div class="flex items-center"><span class="text-2xl font-bold text-brand mr-4">900 zł</span><svg id="icon-cingal" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
-            </button>
-            <div id="content-cingal" class="service-content hidden px-6 pb-6"><div class="border-t border-gray-100 pt-6"><p class="text-gray-700 leading-relaxed">Cingal to nowoczesny, wieloskładnikowy preparat wiskosuplementacyjny, łączący sieciowany kwas hialuronowy (hialuronian sodu) o wysokim stężeniu z szybko działającym kortykosteroidem (triamcynolonem). Kwas hialuronowy odpowiada za przywrócenie lepkości i elastyczności mazi stawowej, smarowanie powierzchni stawowych oraz długofalową amortyzację ruchów. Dodatek sterydu pozwala na natychmiastowe wygaszenie ostrego stanu zapalnego i błyskawiczne uśmierzenie silnego bólu towarzyszącego zwyrodnieniom. Preparat przeznaczony jest do jednorazowej iniekcji u pacjentów, u których objawy zwyrodnieniowe łączą się z dokuczliwym odczynem zapalnym w stawie. Łączy w sobie natychmiastową ulgę z wielomiesięczną ochroną mechaniczną chrząstki. Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co zwiększa precyzję i bezpieczeństwo zabiegu.</p></div></div>
-          </div>
+    <!-- Cingal -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('cingal')">
+        <div class="service-header__main">
+          <h3>Preparat skojarzony Cingal</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">900 zł</span>
+          <svg class="service-header__chevron" id="icon-cingal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-cingal" class="service-content hidden"><div class="service-content__body"><p>Cingal to nowoczesny, wieloskładnikowy preparat wiskosuplementacyjny, łączący sieciowany kwas hialuronowy (hialuronian sodu) o wysokim stężeniu z szybko działającym kortykosteroidem (triamcynolonem). Kwas hialuronowy odpowiada za przywrócenie lepkości i elastyczności mazi stawowej, smarowanie powierzchni stawowych oraz długofalową amortyzację ruchów. Dodatek sterydu pozwala na natychmiastowe wygaszenie ostrego stanu zapalnego i błyskawiczne uśmierzenie silnego bólu towarzyszącego zwyrodnieniom. Preparat przeznaczony jest do jednorazowej iniekcji u pacjentów, u których objawy zwyrodnieniowe łączą się z dokuczliwym odczynem zapalnym w stawie. Łączy w sobie natychmiastową ulgę z wielomiesięczną ochroną mechaniczną chrząstki. Iniekcja wykonywana jest bezpośrednio do stawu, pod kontrolą USG, co zwiększa precyzję i bezpieczeństwo zabiegu.</p>        </div>
+      </div>
+    </div>
 
-          <!-- Monoshot (kwas hialuronowy + PRP) -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('monoshot')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Monoshot (kwas hialuronowy + PRP)</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">1300 zł</span>
-                <svg id="icon-monoshot" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-monoshot" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Monoshot (kwas hialuronowy + PRP) -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('monoshot')">
+        <div class="service-header__main">
+          <h3>Monoshot (kwas hialuronowy + PRP)</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">1300 zł</span>
+          <svg class="service-header__chevron" id="icon-monoshot" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-monoshot" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Monoshot to zaawansowany preparat łączący kwas hialuronowy z osoczem
                   bogatopłytkowym (PRP), pozyskiwanym z krwi pacjenta tuż przed zabiegiem.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Takie połączenie pozwala jednocześnie na poprawę lepkości mazi stawowej i aktywację
                   naturalnych procesów regeneracyjnych.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg stosowany jest w przypadku bólu i ograniczenia ruchomości stawu — zarówno po
                   urazach, jak i w przebiegu choroby zwyrodnieniowej.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   PRP stymuluje odbudowę tkanek, a kwas hialuronowy wspiera ich ochronę i odżywienie.
                   Iniekcja wykonywana jest precyzyjnie, pod kontrolą USG, po wcześniejszej konsultacji
                   ortopedycznej.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Cellular Matrix (kwas hialuronowy + PRP) -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('cellular-matrix')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Cellular Matrix (kwas hialuronowy + PRP)</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">1300 zł</span>
-                <svg id="icon-cellular-matrix" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-cellular-matrix" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Cellular Matrix (kwas hialuronowy + PRP) -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('cellular-matrix')">
+        <div class="service-header__main">
+          <h3>Cellular Matrix (kwas hialuronowy + PRP)</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">1300 zł</span>
+          <svg class="service-header__chevron" id="icon-cellular-matrix" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-cellular-matrix" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Cellular Matrix to innowacyjny preparat łączący osocze bogatopłytkowe (PRP) z kwasem
                   hialuronowym w jednym zestawie zabiegowym.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Pozyskiwany z krwi pacjenta tuż przed podaniem, zawiera czynniki wzrostu odpowiedzialne za regenerację tkanek oraz kwas
                   hialuronowy, który poprawia elastyczność i nawilżenie struktur stawowych.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zabieg wspomaga odbudowę chrząstki, redukuje dolegliwości bólowe i poprawia ruchomość,
                   co sprawia, że znajduje zastosowanie u pacjentów z objawami przeciążenia stawów, urazami
                   oraz w początkowych i średnio zaawansowanych stadiach choroby zwyrodnieniowej.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Podanie preparatu odbywa się pod kontrolą USG, po wcześniejszej konsultacji ortopedycznej.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Kriolezja -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('kriolezja')">
-              <div class="flex items-center"><div class="text-brand mr-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div><div><h3 class="text-xl font-semibold text-gray-800">Kriolezja (Krioanalgezja)</h3></div></div>
-              <div class="flex items-center"><span class="text-2xl font-bold text-brand mr-4">1500 – 2500 zł</span><svg id="icon-kriolezja" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
-            </button>
-            <div id="content-kriolezja" class="service-content hidden px-6 pb-6"><div class="border-t border-gray-100 pt-6"><p class="text-gray-700 leading-relaxed mb-4">Kriolezja to nowoczesna, małoinwazyjna i wysoce skuteczna metoda leczenia przewlekłego bólu, polegająca na czasowym wyłączeniu przewodnictwa w nerwach czuciowych za pomocą niskiej temperatury. Podczas zabiegu lekarz wprowadza w okolice nerwu odpowiedzialnego za ból specjalną sondę kriochirurgiczną, która zamraża tkankę (do ok. -70°C), co blokuje wysyłanie sygnałów bólowych do mózgu, nie niszcząc przy tym struktury samego nerwu.</p><p class="text-gray-700 leading-relaxed mb-4">Zabieg przynosi niemal natychmiastową, długotrwałą ulgę (utrzymującą się od kilku miesięcy do nawet dwóch lat) i pozwala pacjentowi na rezygnację z przyjmowania silnych leków przeciwbólowych oraz szybki powrót do rehabilitacji. Kriolezja jest w pełni bezpieczna, nie pozostawia blizn i w razie potrzeby może być bezpiecznie powtarzana.</p><p class="text-gray-700 leading-relaxed mb-4">Procedura wykonywana jest w znieczuleniu miejscowym, pod bezpośrednią kontrolą USG, co gwarantuje milimetrową precyzję, maksymalne bezpieczeństwo i celowane trafienie w źródło bólu. Wskazana jest przede wszystkim u pacjentów zmagających się z przewlekłym bólem kręgosłupa (zespół stawów międzywyrostkowych), bólami stawów ramiennych, biodrowych i kolanowych (również po endoprotezoplastyce), rwą kulszową czy bólami neuropatycznymi.</p><p class="text-gray-700 leading-relaxed mb-4">Cena uzależniona od okolicy, której poddawany jest zabieg.</p><p><a href="/kriolezja" class="text-brand font-semibold hover:underline">Dowiedz się więcej o kriolezji →</a></p></div></div>
-          </div>
+    <!-- Kriolezja -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('kriolezja')">
+        <div class="service-header__main">
+          <h3>Kriolezja (Krioanalgezja)</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">1500 – 2500 zł</span>
+          <svg class="service-header__chevron" id="icon-kriolezja" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-kriolezja" class="service-content hidden"><div class="service-content__body"><p>Kriolezja to nowoczesna, małoinwazyjna i wysoce skuteczna metoda leczenia przewlekłego bólu, polegająca na czasowym wyłączeniu przewodnictwa w nerwach czuciowych za pomocą niskiej temperatury. Podczas zabiegu lekarz wprowadza w okolice nerwu odpowiedzialnego za ból specjalną sondę kriochirurgiczną, która zamraża tkankę (do ok. -70°C), co blokuje wysyłanie sygnałów bólowych do mózgu, nie niszcząc przy tym struktury samego nerwu.</p><p>Zabieg przynosi niemal natychmiastową, długotrwałą ulgę (utrzymującą się od kilku miesięcy do nawet dwóch lat) i pozwala pacjentowi na rezygnację z przyjmowania silnych leków przeciwbólowych oraz szybki powrót do rehabilitacji. Kriolezja jest w pełni bezpieczna, nie pozostawia blizn i w razie potrzeby może być bezpiecznie powtarzana.</p><p>Procedura wykonywana jest w znieczuleniu miejscowym, pod bezpośrednią kontrolą USG, co gwarantuje milimetrową precyzję, maksymalne bezpieczeństwo i celowane trafienie w źródło bólu. Wskazana jest przede wszystkim u pacjentów zmagających się z przewlekłym bólem kręgosłupa (zespół stawów międzywyrostkowych), bólami stawów ramiennych, biodrowych i kolanowych (również po endoprotezoplastyce), rwą kulszową czy bólami neuropatycznymi.</p><p>Cena uzależniona od okolicy, której poddawany jest zabieg.</p><p><a href="/kriolezja" class="text-brand font-semibold hover:underline">Dowiedz się więcej o kriolezji →</a></p>        </div>
+      </div>
+    </div>
 
-          <!-- Blokada testowa -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('blokada-testowa')">
-              <div class="flex items-center"><div class="text-brand mr-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><div><h3 class="text-xl font-semibold text-gray-800">Blokada testowa (diagnostyczna) przed kriolezją</h3></div></div>
-              <div class="flex items-center"><span class="text-2xl font-bold text-brand mr-4">100 zł</span><svg id="icon-blokada-testowa" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
-            </button>
-            <div id="content-blokada-testowa" class="service-content hidden px-6 pb-6"><div class="border-t border-gray-100 pt-6"><p class="text-gray-700 leading-relaxed mb-4">Blokada testowa to kluczowy, wstępny zabieg diagnostyczny, wykonywany w celu precyzyjnego zlokalizowania nerwu odpowiedzialnego za przewodzenie przewlekłego bólu oraz zakwalifikowania pacjenta do procedury kriolezji. Polega ona na podaniu niewielkiej ilości leku znieczulającego miejscowo bezpośrednio w okolicę podejrzewanego źródła bólu, co pozwala na czasowe „wyłączenie” sygnału bólowego.</p><p class="text-gray-700 leading-relaxed">Głównym celem tej procedury jest potwierdzenie diagnozy – jeśli po wykonaniu blokady pacjent odczuwa natychmiastową, wyraźną ulgę w bólu (nawet na kilka godzin), lekarz zyskuje 100% pewność, który konkretnie nerw należy poddać długofalowemu zamrożeniu podczas właściwego zabiegu kriolezji. Blokada pozwala uniknąć działania „na oślep”, maksymalizując skuteczność późniejszej terapii i zapewniając pacjentowi przewidywalny efekt leczniczy.</p></div></div>
-          </div>
+    <!-- Blokada testowa -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('blokada-testowa')">
+        <div class="service-header__main">
+          <h3>Blokada testowa (diagnostyczna) przed kriolezją</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">100 zł</span>
+          <svg class="service-header__chevron" id="icon-blokada-testowa" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-blokada-testowa" class="service-content hidden"><div class="service-content__body"><p>Blokada testowa to kluczowy, wstępny zabieg diagnostyczny, wykonywany w celu precyzyjnego zlokalizowania nerwu odpowiedzialnego za przewodzenie przewlekłego bólu oraz zakwalifikowania pacjenta do procedury kriolezji. Polega ona na podaniu niewielkiej ilości leku znieczulającego miejscowo bezpośrednio w okolicę podejrzewanego źródła bólu, co pozwala na czasowe „wyłączenie” sygnału bólowego.</p><p>Głównym celem tej procedury jest potwierdzenie diagnozy – jeśli po wykonaniu blokady pacjent odczuwa natychmiastową, wyraźną ulgę w bólu (nawet na kilka godzin), lekarz zyskuje 100% pewność, który konkretnie nerw należy poddać długofalowemu zamrożeniu podczas właściwego zabiegu kriolezji. Blokada pozwala uniknąć działania „na oślep”, maksymalizując skuteczność późniejszej terapii i zapewniając pacjentowi przewidywalny efekt leczniczy.</p>        </div>
+      </div>
+    </div>
 
-          <!-- HM Cast -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('hm-cast')">
-              <div class="flex items-center"><div class="text-brand mr-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg></div><div><h3 class="text-xl font-semibold text-gray-800">Nowoczesne unieruchomienie HM Cast (Lekki gips)</h3></div></div>
-              <div class="flex items-center"><span class="text-2xl font-bold text-brand mr-4">299 – 389 zł</span><svg id="icon-hm-cast" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
-            </button>
-            <div id="content-hm-cast" class="service-content hidden px-6 pb-6"><div class="border-t border-gray-100 pt-6"><p class="text-gray-700 leading-relaxed mb-4">HM Cast to rewolucyjna alternatywa dla tradycyjnego, ciężkiego gipsu oraz klasycznych ortez, stosowana w leczeniu złamań, skręceń i innych urazów narządu ruchu. Wykonany jest ze specjalnej, zaawansowanej technologicznie siatki syntetycznej nasączonej żywicą poliuretanową, która pod wpływem wody idealnie dopasowuje się do anatomicznego kształtu kończyny, a następnie twardnieje, zapewniając pełną stabilizację i bezpieczeństwo kości.</p><p class="text-gray-700 leading-relaxed mb-4">Dzięki unikalnej, ażurowej (siateczkowej) strukturze HM Cast zapewnia stały dopływ powietrza do skóry, co całkowicie eliminuje problem swędzenia, odparzeń oraz nieprzyjemnego zapachu. Gips ten jest w 100% wodoodporny i szybkoschnący, co pozwala na codzienne branie prysznica, a nawet kąpiel bez konieczności zabezpieczania kończyny folią. Zabieg nałożenia jest całkowicie bezbolesny, szybki i czysty.</p><p class="text-gray-700 leading-relaxed mb-4">Konstrukcja HM Cast jest wyjątkowo lekka i pozwala na swobodne noszenie odzieży, znacząco poprawiając jakość życia w okresie rekonwalescencji. Ponadto gips jest całkowicie przepuszczalny dla promieni rentgenowskich, co umożliwia precyzyjną kontrolę zrostu kostnego na zdjęciach RTG bez konieczności jego zdejmowania.</p><p class="text-gray-700 leading-relaxed">Cena uzależniona od rozmiaru gipsu.</p></div></div>
-          </div>
+    <!-- HM Cast -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('hm-cast')">
+        <div class="service-header__main">
+          <h3>Nowoczesne unieruchomienie HM Cast (Lekki gips)</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">299 – 389 zł</span>
+          <svg class="service-header__chevron" id="icon-hm-cast" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-hm-cast" class="service-content hidden"><div class="service-content__body"><p>HM Cast to rewolucyjna alternatywa dla tradycyjnego, ciężkiego gipsu oraz klasycznych ortez, stosowana w leczeniu złamań, skręceń i innych urazów narządu ruchu. Wykonany jest ze specjalnej, zaawansowanej technologicznie siatki syntetycznej nasączonej żywicą poliuretanową, która pod wpływem wody idealnie dopasowuje się do anatomicznego kształtu kończyny, a następnie twardnieje, zapewniając pełną stabilizację i bezpieczeństwo kości.</p><p>Dzięki unikalnej, ażurowej (siateczkowej) strukturze HM Cast zapewnia stały dopływ powietrza do skóry, co całkowicie eliminuje problem swędzenia, odparzeń oraz nieprzyjemnego zapachu. Gips ten jest w 100% wodoodporny i szybkoschnący, co pozwala na codzienne branie prysznica, a nawet kąpiel bez konieczności zabezpieczania kończyny folią. Zabieg nałożenia jest całkowicie bezbolesny, szybki i czysty.</p><p>Konstrukcja HM Cast jest wyjątkowo lekka i pozwala na swobodne noszenie odzieży, znacząco poprawiając jakość życia w okresie rekonwalescencji. Ponadto gips jest całkowicie przepuszczalny dla promieni rentgenowskich, co umożliwia precyzyjną kontrolę zrostu kostnego na zdjęciach RTG bez konieczności jego zdejmowania.</p><p>Cena uzależniona od rozmiaru gipsu.</p>        </div>
+      </div>
+    </div>
 
-          <!-- Założenie opatrunku gipsowego -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('gips')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Założenie tradycyjnego opatrunku gipsowego</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">200 zł</span>
-                <svg id="icon-gips" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-gips" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Założenie opatrunku gipsowego -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('gips')">
+        <div class="service-header__main">
+          <h3>Założenie tradycyjnego opatrunku gipsowego</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">200 zł</span>
+          <svg class="service-header__chevron" id="icon-gips" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-gips" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Opatrunek gipsowy to skuteczna metoda unieruchomienia kończyny po urazach — takich jak
                   złamania, skręcenia czy uszkodzenia tkanek miękkich.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Jego zadaniem jest stabilizacja miejsca urazu, wsparcie procesu gojenia oraz ochrona przed dalszym uszkodzeniem.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Podczas zakładania opatrunku lekarz indywidualnie dobiera rodzaj i zakres unieruchomienia
                   w zależności od urazu. Zabieg wykonywany jest z zachowaniem pełnego bezpieczeństwa i
                   komfortu pacjenta.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Po założeniu pacjent otrzymuje jasne instrukcje dotyczące dalszego postępowania.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Badanie preluksacyjne -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('preluksacyjne')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Badanie preluksacyjne</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">300 zł</span>
-                <svg id="icon-preluksacyjne" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-preluksacyjne" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Badanie preluksacyjne -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('preluksacyjne')">
+        <div class="service-header__main">
+          <h3>Badanie preluksacyjne</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">300 zł</span>
+          <svg class="service-header__chevron" id="icon-preluksacyjne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-preluksacyjne" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   Badanie preluksacyjne to nieinwazyjne, ultrasonograficzne badanie stawów biodrowych,
                   wykonywane u noworodków i niemowląt w celu wczesnego wykrycia nieprawidłowości
                   rozwojowych – takich jak dysplazja stawów biodrowych.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Wczesna diagnoza umożliwia szybkie wdrożenie leczenia i zapobiega późniejszym powikłaniom ortopedycznym.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Zaleca się, aby pierwsze badanie zostało wykonane między 4. a 6. tygodniem życia dziecka.
-                </p>
-              </div>
-            </div>
-          </div>
+          </p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Badanie RTG (1 zdjęcie) -->
-          <div class="service-item bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <button class="service-header w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleService('rtg')">
-              <div class="flex items-center">
-                <div class="text-brand mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                                  <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Badanie RTG (1 zdjęcie)</h3>
-                  </div>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-brand mr-4">60 zł</span>
-                <svg id="icon-rtg" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </button>
-            <div id="content-rtg" class="service-content hidden px-6 pb-6">
-              <div class="border-t border-gray-100 pt-6">
-                <p class="text-gray-700 leading-relaxed mb-4">
+    <!-- Badanie RTG (1 zdjęcie) -->
+    <div class="service-item">
+      <button class="service-header service-header--priced" onclick="toggleService('rtg')">
+        <div class="service-header__main">
+          <h3>Badanie RTG (1 zdjęcie)</h3>
+        </div>
+        <div class="service-header__meta">
+          <span class="service-header__price">60 zł</span>
+          <svg class="service-header__chevron" id="icon-rtg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="content-rtg" class="service-content hidden">
+        <div class="service-content__body">
+          <p>
                   RTG to szybkie i bezbolesne badanie obrazowe, które pozwala ocenić struktury kostne i
                   stawowe, wykryć złamania, zwichnięcia, zmiany zwyrodnieniowe lub inne patologie układu
                   kostno-stawowego.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   W naszej placówce badanie wykonywane jest na miejscu, nowoczesnym
                   aparatem cyfrowym, co pozwala uzyskać precyzyjny obraz i skraca czas oczekiwania na
                   wynik.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4">
+          </p>
+          <p>
                   Badanie nie wymaga specjalnego przygotowania, chyba że lekarz zaleci inaczej.
-                </p>
-              </div>
-            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Information -->
+  <div class="info-panel">
+    <div class="info-panel__inner">
+      <h3 class="info-panel__title">Ważne informacje</h3>
+      <ul class="info-panel__list">
+        <li>• Wszystkie ceny podane są w PLN.</li>
+        <li>• W Klinice akceptujemy płatności gotówką, kartą oraz BLIK</li>
+        <li>• Zakres cen poszczególnych usług może różnić się w zależności od specjalizacji, doświadczenia oraz kwalifikacji lekarza prowadzącego</li>
+        <li>• Decyzja o wykonaniu zabiegu podejmowana jest po konsultacji lekarskiej i uzależniona jest od kwalifikacji pacjenta oraz dostępności terminów. Zabieg może zostać przeprowadzony podczas tej samej wizyty lub w ustalonym terminie.</li>
+        <li>• Informacje zawarte w cenniku mają charakter informacyjny i nie stanowią oferty w rozumieniu art. 66 § 1 Kodeksu cywilnego.</li>
+        <li>• Ostateczny koszt usług zostanie określony podczas konsultacji, po dostosowaniu oferty Kliniki do indywidualnych potrzeb Klienta.</li>
+        <li>• W przypadku konieczności odwołania wizyty prosimy o kontakt z rejestracją najpóźniej 24 godziny przed planowanym terminem.</li>
+        <li>• Klinika zastrzega sobie prawo do zmiany cen oraz opisywanych na niniejszej stronie usług.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+  </div>
+</div>
+</main>
+
+<footer class="footer-dark">
+  <div class="footer-dark__top">
+    <div class="wrap">
+      <div class="footer-dark__grid">
+        <div class="footer-dark__brand">
+          <picture><source type="image/webp" srcset="assets/logo-footer.webp"><img src="assets/logo-footer.png" alt="OrthoCare" class="footer-dark__logo" loading="lazy" decoding="async" width="240" height="96" ></picture>
+          <p class="footer-dark__tagline">Ortopedia nowego pokolenia. Łączymy najnowocześniejszą wiedzę medyczną z indywidualnym podejściem.</p>
+          <div class="footer-dark__social">
+            <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" target="_blank" class="footer-social-btn" aria-label="Facebook">fb</a>
+            <a href="https://www.instagram.com/klinika_orthocare/" target="_blank" class="footer-social-btn" aria-label="Instagram">ig</a>
           </div>
         </div>
-
-        <!-- Additional Information -->
-        <div class="mt-12 text-center">
-          <div class="bg-brand-light rounded-2xl p-8">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ważne informacje</h3>
-            <div class="space-y-4 text-left">
-              <div>
-                <h4 class="font-semibold text-gray-800 mb-3 text-lg">Dodatkowe informacje:</h4>
-                <ul class="text-gray-700 space-y-2 text-sm leading-relaxed">
-                  <li>• Wszystkie ceny podane są w PLN.</li>
-                  <li>• W Klinice akceptujemy płatności gotówką, kartą oraz BLIK</li>
-                  <li>• Zakres cen poszczególnych usług może różnić się w zależności od specjalizacji, doświadczenia oraz kwalifikacji lekarza prowadzącego</li>
-                  <li>• Decyzja o wykonaniu zabiegu podejmowana jest po konsultacji lekarskiej i uzależniona jest od kwalifikacji pacjenta oraz dostępności terminów. Zabieg może zostać przeprowadzony podczas tej samej wizyty lub w ustalonym terminie.</li>
-                  <li>• Informacje zawarte w cenniku mają charakter informacyjny i nie stanowią oferty w rozumieniu art. 66 § 1 Kodeksu cywilnego.</li>
-                  <li>• Ostateczny koszt usług zostanie określony podczas konsultacji, po dostosowaniu oferty Kliniki do indywidualnych potrzeb Klienta.</li>
-                  <li>• W przypadku konieczności odwołania wizyty prosimy o kontakt z rejestracją najpóźniej 24 godziny przed planowanym terminem.</li>
-                  <li>• Klinika zastrzega sobie prawo do zmiany cen oraz opisywanych na niniejszej stronie usług.</li>
-                </ul>
-              </div>
-            </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Nawigacja</p>
+          <ul class="footer-dark__list">
+            <li><a href="klinika.html">O nas</a></li>
+            <li><a href="zespol.html">Lekarze</a></li>
+            <li><a href="cennik.html">Usługi i cennik</a></li>
+            <li><a href="zabiegi.html">Zabiegi</a></li>
+            <li><a href="kriolezja.html">Kriolezja</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Dokumenty</p>
+          <ul class="footer-dark__list">
+            <li><a href="assets/rodo.pdf" target="_blank">Klauzula RODO</a></li>
+            <li><a href="assets/regulamin.pdf" target="_blank">Regulamin kliniki</a></li>
+            <li><a href="assets/downloads/Polityka cookies serwisu OrthoCare.pdf" target="_blank">Polityka cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Nasi partnerzy</p>
+          <div class="footer-dark__partners">
+            <a href="https://warsaweagles.com/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-eagles.webp"><img src="assets/partner-eagles.png" alt="Warsaw Eagles" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://www.rplusradom.pl/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-rehab-plus.webp"><img src="assets/partner-rehab-plus.png" alt="Rehabilitacja Plus" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://www.wksczarni.pl/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-czarni-radom.webp"><img src="assets/partner-czarni-radom.png" alt="WKS Czarni Radom" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://gipsme.pl/" target="_blank" rel="noopener" class="footer-partner-tile footer-partner-tile--gipsme"><picture><source type="image/webp" srcset="assets/gipsme.webp"><img src="assets/gipsme.png" alt="gipsme" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+  <div class="footer-dark__bottom">
+    <div class="wrap">
+      <span>© 2026 Klinika OrthoCare. Wszelkie prawa zastrzeżone.</span>
+      <span>ul. Dębowa 2, 26-600 Radom | <a href="tel:889817012">889 817 012</a></span>
+    </div>
+  </div>
+</footer>
 
-  <!-- Footer copied from index.html -->
-  <footer id="main-footer"></footer>
-  
-  <script src="js/main.js"></script>
-  <script>
-    // Insert header and footer from index.html
-    fetch('index.html').then(r=>r.text()).then(html=>{
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
-      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
-      if (window.reinitMobileMenu) window.reinitMobileMenu();
-    });
 
-    // Toggle service content
-    function toggleService(serviceId) {
-      const content = document.getElementById(`content-${serviceId}`);
-      const icon = document.getElementById(`icon-${serviceId}`);
-      
-      if (content.classList.contains('hidden')) {
-        content.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
-      } else {
-        content.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
-      }
+<div id="booking-modal" class="booking-modal hidden">
+  <div class="booking-modal__panel">
+    <button id="close-modal" type="button" class="booking-modal__close" aria-label="Zamknij">
+      <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <div class="booking-modal__body">
+      <h2 class="heading booking-modal__title">Umów wizytę w OrthoCare</h2>
+      <div class="booking-modal__widget">
+        <a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow" data-zlw-facility="klinika-orthocare" data-zlw-type="facility-big" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Klinika OrthoCare</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="js/main.js" defer></script>
+<script defer>
+(function () {
+  function loadBookingWidget() {
+    if (document.getElementById('zl-widget-s')) return;
+    var js = document.createElement('script');
+    js.id = 'zl-widget-s';
+    js.src = 'https://platform.docplanner.com/js/widget.js';
+    js.async = true;
+    document.body.appendChild(js);
+  }
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.umow-wizyte-btn, .zl-facility-url')) {
+      loadBookingWidget();
     }
-  </script>
+  }, { passive: true });
+})();
+</script>
+
 </body>
-</html> 
+</html>

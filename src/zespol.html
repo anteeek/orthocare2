@@ -3,96 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lekarze – OrthoCare</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/dist/output.css" rel="stylesheet">
+  <title>Lekarze – OrthoCare Radom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="dns-prefetch" href="https://platform.docplanner.com">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="css/legacy.css" rel="stylesheet">
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-brand-light min-h-screen overflow-x-hidden">
-  <header id="main-header"></header>
-  <main class="w-full max-w-full overflow-x-hidden py-12 md:py-16">
-    <section class="max-w-6xl mx-auto px-4">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-10 text-center">Lekarze</h1>
+<body>
+
+<header id="site-header">
+<nav class="nav">
+  <div class="nav__wrap">
+    <a href="index.html" class="nav__logo">
+      <picture><source type="image/webp" srcset="assets/logo-orthocare.webp"><img src="assets/logo-orthocare.png" alt="OrthoCare" width="180" height="38" decoding="async" ></picture>
+    </a>
+    <ul class="nav__links" id="navLinks">
+        <li><a href="klinika.html">O nas</a></li>
+        <li><a href="zespol.html" class="is-active">Lekarze</a></li>
+        <li><a href="cennik.html">Usługi i cennik</a></li>
+        <li><a href="zabiegi.html">Zabiegi</a></li>
+        <li><a href="kriolezja.html">Kriolezja</a></li>
+    </ul>
+    <div class="nav__actions">
+      <div class="nav__social">
+        <a href="https://www.instagram.com/klinika_orthocare/" target="_blank" class="nav-social-btn" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" target="_blank" class="nav-social-btn" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+      <a href="kontakt.html" class="nav__btn-kontakt">Kontakt</a>
+      <button type="button" class="nav__btn-rezerwuj umow-wizyte-btn">Umów wizytę</button>
+    </div>
+    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="klinika.html">O nas</a>
+    <a href="zespol.html" class="is-active">Lekarze</a>
+    <a href="cennik.html">Usługi i cennik</a>
+    <a href="zabiegi.html">Zabiegi</a>
+    <a href="kriolezja.html">Kriolezja</a>
+    <a href="kontakt.html">Kontakt</a>
+    <div class="nav-cta-wrap">
+      <button type="button" class="btn btn--primary umow-wizyte-btn" style="width:100%">Umów wizytę</button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main>
+<div class="page-section__head">
+  <div class="wrap-inner">
+    <h1 class="page-title">Lekarze</h1>
+  </div>
+</div>
+<div class="page-section__body">
+  <div class="wrap-inner legacy-content">
+<section class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/markowski.png" alt="lek. Tomasz Markowski" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/markowski.webp"><img src="assets/doctors/cards/markowski.jpg" alt="lek. Tomasz Markowski" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Tomasz Markowski</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu</div>
           <a href="tomasz-markowski.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/papiewski.png" alt="lek. Michał Papiewski" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/papiewski.webp"><img src="assets/doctors/cards/papiewski.jpg" alt="lek. Michał Papiewski" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Michał Papiewski</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Ortopeda, w trakcie specjalizacji</div>
           <a href="michal-papiewski.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/kasprzak.png" alt="lek. Łukasz Kasprzak" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/kasprzak.webp"><img src="assets/doctors/cards/kasprzak.jpg" alt="lek. Łukasz Kasprzak" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Łukasz Kasprzak</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu</div>
           <a href="lukasz-kasprzak.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/zaorski.png" alt="lek. Piotr Zaorski" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/zaorski.webp"><img src="assets/doctors/cards/zaorski.jpg" alt="lek. Piotr Zaorski" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Piotr Zaorski</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu, chirurg ręki</div>
           <a href="piotr-zaorski.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/glazer.png" alt="dr n. med. Grzegorz Glazer" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/glazer.webp"><img src="assets/doctors/cards/glazer.jpg" alt="dr n. med. Grzegorz Glazer" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">dr n. med. Grzegorz Glazer</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu</div>
           <a href="grzegorz-glazer.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/dominik.png" alt="lek. Bartosz Dominik" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/dominik.webp"><img src="assets/doctors/cards/dominik.jpg" alt="lek. Bartosz Dominik" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Bartosz Dominik</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu</div>
           <a href="bartosz-dominik.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/balinski.png" alt="lek. Karol Baliński" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/balinski.webp"><img src="assets/doctors/cards/balinski.jpg" alt="lek. Karol Baliński" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Karol Baliński</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu, ortopeda dziecięcy</div>
           <a href="karol-balinski.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/naroznik.png" alt="lek. Maciej Narożnik" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/naroznik.webp"><img src="assets/doctors/cards/naroznik.jpg" alt="lek. Maciej Narożnik" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Maciej Narożnik</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu</div>
           <a href="maciej-naroznik.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/zagorski.png" alt="lek. Michał Zagórski" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/cards/zagorski.webp"><img src="assets/doctors/cards/zagorski.jpg" alt="lek. Michał Zagórski" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Michał Zagórski</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Ortopeda, w trakcie specjalizacji</div>
           <a href="michal-zagorski.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/anonymous.jpg" alt="dr n. med. Mateusz Kominek" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/anonymous.webp"><img src="assets/doctors/anonymous.jpg" alt="dr n. med. Mateusz Kominek" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">dr n. med. Mateusz Kominek</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu</div>
           <a href="mateusz-kominek.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/anonymous.jpg" alt="lek. Kamil Fatyga" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/anonymous.webp"><img src="assets/doctors/anonymous.jpg" alt="lek. Kamil Fatyga" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Kamil Fatyga</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu</div>
           <a href="kamil-fatyga.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
-          <img src="assets/doctors/anonymous.jpg" alt="lek. Marcin Kuśmierz" class="rounded-full w-24 h-24 object-cover mb-4">
+          <picture><source type="image/webp" srcset="assets/doctors/anonymous.webp"><img src="assets/doctors/anonymous.jpg" alt="lek. Marcin Kuśmierz" class="rounded-full doctor-card__photo object-cover mb-4" loading="lazy" decoding="async" width="200" height="200"></picture>
           <div class="font-bold text-brand-dark">lek. Marcin Kuśmierz</div>
           <div class="text-xs text-gray-500 mb-3 mt-1">Specjalista ortopedii i traumatologii narządu ruchu</div>
           <a href="marcin-kusmierz.html" class="text-brand text-sm font-semibold hover:underline">Czytaj więcej ›</a>
@@ -100,16 +156,98 @@
 
       </div>
     </section>
-  </main>
-  <footer id="main-footer"></footer>
-  <script src="js/main.js"></script>
-  <script>
-    fetch('index.html').then(r=>r.text()).then(html=>{
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
-      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
-      if (window.reinitMobileMenu) window.reinitMobileMenu();
-    });
-  </script>
+  </div>
+</div>
+</main>
+
+<footer class="footer-dark">
+  <div class="footer-dark__top">
+    <div class="wrap">
+      <div class="footer-dark__grid">
+        <div class="footer-dark__brand">
+          <picture><source type="image/webp" srcset="assets/logo-footer.webp"><img src="assets/logo-footer.png" alt="OrthoCare" class="footer-dark__logo" loading="lazy" decoding="async" width="240" height="96" ></picture>
+          <p class="footer-dark__tagline">Ortopedia nowego pokolenia. Łączymy najnowocześniejszą wiedzę medyczną z indywidualnym podejściem.</p>
+          <div class="footer-dark__social">
+            <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" target="_blank" class="footer-social-btn" aria-label="Facebook">fb</a>
+            <a href="https://www.instagram.com/klinika_orthocare/" target="_blank" class="footer-social-btn" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Nawigacja</p>
+          <ul class="footer-dark__list">
+            <li><a href="klinika.html">O nas</a></li>
+            <li><a href="zespol.html">Lekarze</a></li>
+            <li><a href="cennik.html">Usługi i cennik</a></li>
+            <li><a href="zabiegi.html">Zabiegi</a></li>
+            <li><a href="kriolezja.html">Kriolezja</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Dokumenty</p>
+          <ul class="footer-dark__list">
+            <li><a href="assets/rodo.pdf" target="_blank">Klauzula RODO</a></li>
+            <li><a href="assets/regulamin.pdf" target="_blank">Regulamin kliniki</a></li>
+            <li><a href="assets/downloads/Polityka cookies serwisu OrthoCare.pdf" target="_blank">Polityka cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Nasi partnerzy</p>
+          <div class="footer-dark__partners">
+            <a href="https://warsaweagles.com/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-eagles.webp"><img src="assets/partner-eagles.png" alt="Warsaw Eagles" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://www.rplusradom.pl/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-rehab-plus.webp"><img src="assets/partner-rehab-plus.png" alt="Rehabilitacja Plus" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://www.wksczarni.pl/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-czarni-radom.webp"><img src="assets/partner-czarni-radom.png" alt="WKS Czarni Radom" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://gipsme.pl/" target="_blank" rel="noopener" class="footer-partner-tile footer-partner-tile--gipsme"><picture><source type="image/webp" srcset="assets/gipsme.webp"><img src="assets/gipsme.png" alt="gipsme" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-dark__bottom">
+    <div class="wrap">
+      <span>© 2026 Klinika OrthoCare. Wszelkie prawa zastrzeżone.</span>
+      <span>ul. Dębowa 2, 26-600 Radom | <a href="tel:889817012">889 817 012</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<div id="booking-modal" class="booking-modal hidden">
+  <div class="booking-modal__panel">
+    <button id="close-modal" type="button" class="booking-modal__close" aria-label="Zamknij">
+      <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <div class="booking-modal__body">
+      <h2 class="heading booking-modal__title">Umów wizytę w OrthoCare</h2>
+      <div class="booking-modal__widget">
+        <a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow" data-zlw-facility="klinika-orthocare" data-zlw-type="facility-big" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Klinika OrthoCare</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="js/main.js" defer></script>
+<script defer>
+(function () {
+  function loadBookingWidget() {
+    if (document.getElementById('zl-widget-s')) return;
+    var js = document.createElement('script');
+    js.id = 'zl-widget-s';
+    js.src = 'https://platform.docplanner.com/js/widget.js';
+    js.async = true;
+    document.body.appendChild(js);
+  }
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.umow-wizyte-btn, .zl-facility-url')) {
+      loadBookingWidget();
+    }
+  }, { passive: true });
+})();
+</script>
+
 </body>
 </html>

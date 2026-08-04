@@ -1,38 +1,36 @@
-// Mobile menu toggle - moved to function to handle dynamic loading
-function initMobileMenu() {
-    const mobileMenuButton = document.querySelector('button.md\\:hidden');
-    const mobileMenu = document.querySelector('.md\\:hidden.hidden');
-
-    if (mobileMenuButton && mobileMenu) {
-        // Remove any existing listeners to avoid duplicates
-        mobileMenuButton.removeEventListener('click', handleMobileMenuClick);
-        mobileMenuButton.addEventListener('click', handleMobileMenuClick);
-
-        // Close mobile menu when clicking outside
-        document.removeEventListener('click', handleMobileMenuOutsideClick);
-        document.addEventListener('click', handleMobileMenuOutsideClick);
-    }
-}
-
-function handleMobileMenuClick() {
-    const mobileMenu = document.querySelector('.md\\:hidden.hidden');
+// Mobile menu (reference nav)
+function closeMobile() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.getElementById('menuBtn');
     if (mobileMenu) {
-        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.remove('open');
     }
+    if (menuBtn) {
+        menuBtn.setAttribute('aria-expanded', 'false');
+    }
+    document.body.classList.remove('nav-open');
+}
+window.closeMobile = closeMobile;
+
+function initMobileMenu() {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (!menuBtn || !mobileMenu) {
+        return;
+    }
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.onclick = function () {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.classList.toggle('nav-open', isOpen);
+    };
+    mobileMenu.querySelectorAll('a, .umow-wizyte-btn').forEach(function (link) {
+        link.addEventListener('click', closeMobile);
+    });
 }
 
-function handleMobileMenuOutsideClick(e) {
-    const mobileMenuButton = document.querySelector('button.md\\:hidden');
-    const mobileMenu = document.querySelector('.md\\:hidden.hidden');
-    
-    if (mobileMenuButton && mobileMenu && 
-        !mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.add('hidden');
-    }
-}
-
-// Initialize mobile menu on DOM ready
 document.addEventListener('DOMContentLoaded', initMobileMenu);
+window.reinitMobileMenu = initMobileMenu;
 
 // Counter animation
 function animateCounter(element, target, duration = 2000) {
@@ -85,11 +83,11 @@ function handleServiceTabs() {
         tab.addEventListener('click', function () {
             // Remove active styles from all tabs
             tabs.forEach(t => {
-                t.classList.remove('text-[#B4CBD1]', 'border-b-2', 'border-[#B4CBD1]');
+                t.classList.remove('text-brand', 'border-b-2', 'border-brand');
                 t.classList.add('text-gray-500');
             });
             // Add active styles to clicked tab
-            this.classList.add('text-[#B4CBD1]', 'border-b-2', 'border-[#B4CBD1]');
+            this.classList.add('text-brand', 'border-b-2', 'border-brand');
             this.classList.remove('text-gray-500');
             // Show corresponding tab content
             const tabName = this.getAttribute('data-tab');
@@ -139,78 +137,202 @@ function handleExpandChips() {
 }
 document.addEventListener('DOMContentLoaded', handleExpandChips);
 
-// Opinions carousel
-function handleOpinionsCarousel() {
-    const carousel = document.getElementById('opinions-carousel');
+// Testimonials grid (reference design)
+function initTestimonials() {
+    const reviews = [
+        { stars: 5, text: 'Świetny lekarz — widać, że zna się na tym, co robi. Jestem bardzo zadowolona z efektu leczenia, moje kolano odzyskało sprawność.', name: 'Ilona', source: 'Google' },
+        { stars: 5, text: 'Super lekarz, wszystko dokładnie omawia, odpowiada wyczerpująco na każde pytanie, dokładnie bada. Atmosfera w gabinecie świetna.', name: 'Piotr R.', source: 'Google' },
+        { stars: 5, text: 'Profesjonalne podejście do pacjenta. Lekarz wszystko wyjaśnił zrozumiale i był bardzo pomocny. Polecam z całego serca.', name: 'Tadeusz S.', source: 'Google' },
+        { stars: 5, text: 'Bardzo sympatyczny, kompetentny lekarz, świetny kontakt z pacjentem. Słucha i odpowiada na pytania — dziękuję.', name: 'Urszula', source: 'Google' },
+        { stars: 5, text: 'Lekarz bardzo merytoryczny, konkretny, a jednocześnie bardzo przyjazny. Uważnie słucha pacjenta i odpowiada zrozumiałym językiem.', name: 'Izabela', source: 'Google' },
+        { stars: 5, text: 'Polecam bardzo miły lekarz, dokładnie wyjaśnia co powoduje ból i jak można go zniwelować. Wizyta punktualna i profesjonalna.', name: 'Szymon', source: 'Google' },
+    ];
+    const grid = document.getElementById('testGrid');
+    if (!grid) {
+        return;
+    }
+    let perPage = window.innerWidth <= 920 ? 1 : (window.innerWidth <= 1100 ? 2 : 3);
+    let pages = Math.ceil(reviews.length / perPage);
+    let cur = 0;
+    let swipeBound = false;
+
+    function isMobileReviews() {
+        return window.innerWidth <= 920;
+    }
+
+    function activeReviewIndex() {
+        const cards = grid.querySelectorAll('.review-card');
+        if (!cards.length) {
+            return 0;
+        }
+        const cardWidth = cards[0].offsetWidth + 16;
+        if (!cardWidth) {
+            return 0;
+        }
+        return Math.max(0, Math.min(cards.length - 1, Math.round(grid.scrollLeft / cardWidth)));
+    }
+
+    function scrollToReview(index) {
+        const cards = grid.querySelectorAll('.review-card');
+        const card = cards[index];
+        if (!card) {
+            return;
+        }
+        const left = card.offsetLeft - (grid.clientWidth - card.clientWidth) / 2;
+        grid.scrollTo({ left: left, behavior: 'smooth' });
+    }
+
+    function cardHtml(r) {
+        const initial = r.name.charAt(0).toUpperCase();
+        return '<article class="review-card">' +
+            '<div class="review-card__head">' +
+            '<div class="review-card__avatar">' + initial + '</div>' +
+            '<div class="review-card__meta">' +
+            '<div class="review-card__name">' + r.name + '</div>' +
+            '<div class="review-card__source">' + r.source + ' · ★★★★★</div>' +
+            '</div></div>' +
+            '<div class="review-card__stars">' + '★'.repeat(r.stars) + '</div>' +
+            '<p class="review-card__text">' + r.text + '</p>' +
+            '</article>';
+    }
+
+    function go(n) {
+        cur = (n + pages) % pages;
+        const s = reviews.slice(cur * perPage, cur * perPage + perPage);
+        grid.innerHTML = s.map(cardHtml).join('');
+    }
+
+    function rebuild() {
+        if (isMobileReviews()) {
+            grid.classList.add('reviews-track--swipe');
+            grid.innerHTML = reviews.map(cardHtml).join('');
+            if (!swipeBound) {
+                bindHorizontalSwipe(grid.parentElement, grid);
+                swipeBound = true;
+            }
+            return;
+        }
+        grid.classList.remove('reviews-track--swipe');
+        perPage = window.innerWidth <= 1100 ? 2 : 3;
+        pages = Math.ceil(reviews.length / perPage);
+        if (cur >= pages) cur = 0;
+        go(cur);
+    }
+
+    rebuild();
+    window.addEventListener('resize', rebuild);
+    var tPrev = document.getElementById('tPrev');
+    var tNext = document.getElementById('tNext');
+    if (tPrev) {
+        tPrev.onclick = function () {
+            if (isMobileReviews()) {
+                scrollToReview(Math.max(0, activeReviewIndex() - 1));
+            } else {
+                go(cur - 1);
+            }
+        };
+    }
+    if (tNext) {
+        tNext.onclick = function () {
+            if (isMobileReviews()) {
+                const cards = grid.querySelectorAll('.review-card');
+                scrollToReview(Math.min(cards.length - 1, activeReviewIndex() + 1));
+            } else {
+                go(cur + 1);
+            }
+        };
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initTestimonials);
+
+function bindHorizontalSwipe(root, track) {
+    if (!root || !track) {
+        return;
+    }
+    var state = null;
+    root.addEventListener('touchstart', function (e) {
+        if (!e.touches[0]) {
+            return;
+        }
+        state = {
+            x: e.touches[0].clientX,
+            y: e.touches[0].clientY,
+            scroll: track.scrollLeft,
+            locked: null
+        };
+    }, { passive: true });
+    root.addEventListener('touchmove', function (e) {
+        if (!state || !e.touches[0]) {
+            return;
+        }
+        var dx = e.touches[0].clientX - state.x;
+        var dy = e.touches[0].clientY - state.y;
+        if (state.locked === null) {
+            if (Math.abs(dx) < 8 && Math.abs(dy) < 8) {
+                return;
+            }
+            state.locked = Math.abs(dx) > Math.abs(dy);
+        }
+        if (state.locked) {
+            track.scrollLeft = state.scroll - dx;
+        }
+    }, { passive: true });
+    root.addEventListener('touchend', function () {
+        state = null;
+    });
+}
+
+function initPracticeCardsCarousel() {
+    const carousel = document.querySelector('[data-cards-carousel]');
     if (!carousel) {
         return;
     }
-    const slides = Array.from(carousel.querySelectorAll('.opinion-slide'));
-    const prevBtn = document.getElementById('opinions-prev');
-    const nextBtn = document.getElementById('opinions-next');
-    const dotsContainer = document.getElementById('opinions-dots');
-    let current = 0;
-    let slidesToShow = 1; // Always show only 1 slide
-
-    function updateSlidesToShow() {
-        slidesToShow = 1; // Always 1
+    const track = carousel.querySelector('[data-cards-track]');
+    const prev = carousel.querySelector('[data-cards-prev]');
+    const next = carousel.querySelector('[data-cards-next]');
+    if (!track) {
+        return;
+    }
+    const cards = Array.from(track.children).filter(function (el) {
+        return el.classList.contains('card3');
+    });
+    if (cards.length === 0) {
+        return;
     }
 
-    function updateCarousel() {
-        updateSlidesToShow();
-        const slideWidth = 100 / slidesToShow;
-        carousel.style.transform = `translateX(-${current * slideWidth}%)`;
-        slides.forEach(slide => {
-            slide.style.width = `${slideWidth}%`;
-        });
-        updateDots();
+    function activeIndex() {
+        const cardWidth = cards[0].offsetWidth + 16;
+        if (!cardWidth) {
+            return 0;
+        }
+        return Math.max(0, Math.min(cards.length - 1, Math.round(track.scrollLeft / cardWidth)));
     }
 
-    function updateDots() {
-        if (!dotsContainer) {
+    function scrollToIndex(index) {
+        const card = cards[index];
+        if (!card) {
             return;
         }
-        dotsContainer.innerHTML = '';
-        const total = Math.max(1, slides.length - slidesToShow + 1);
-        for (let i = 0; i < total; i++) {
-            const dot = document.createElement('button');
-            dot.className = 'w-3 h-3 rounded-full ' + (i === current ? 'bg-[#8e8279]' : 'bg-gray-300') + ' focus:outline-none';
-            dot.addEventListener('click', () => {
-                current = i;
-                updateCarousel();
-            });
-            dotsContainer.appendChild(dot);
-        }
+        const left = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+        track.scrollTo({ left: left, behavior: 'smooth' });
     }
 
-    function goToSlide(idx) {
-        const total = Math.max(1, slides.length - slidesToShow + 1);
-        current = Math.max(0, Math.min(idx, total - 1));
-        updateCarousel();
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            goToSlide(current - 1);
+    if (prev) {
+        prev.addEventListener('click', function () {
+            scrollToIndex(Math.max(0, activeIndex() - 1));
         });
     }
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            goToSlide(current + 1);
+    if (next) {
+        next.addEventListener('click', function () {
+            scrollToIndex(Math.min(cards.length - 1, activeIndex() + 1));
         });
     }
 
-    window.addEventListener('resize', () => {
-        updateSlidesToShow();
-        // Clamp current to valid range after resize
-        goToSlide(current);
-    });
-
-    // Initialize
-    updateSlidesToShow();
-    goToSlide(0);
+    bindHorizontalSwipe(carousel, track);
 }
-document.addEventListener('DOMContentLoaded', handleOpinionsCarousel);
+
+document.addEventListener('DOMContentLoaded', initPracticeCardsCarousel);
 
 // Booking modal open/close
 function handleBookingModal() {
@@ -236,6 +358,7 @@ function handleBookingModal() {
     openButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            closeMobile();
             openModal();
         });
     });
@@ -281,16 +404,16 @@ function ensureBookingModalElement() {
     }
     const wrapper = document.createElement('div');
     wrapper.innerHTML = (
-        '<div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">' +
-            '<div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">' +
-                '<button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10">' +
-                    '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+        '<div id="booking-modal" class="booking-modal hidden">' +
+            '<div class="booking-modal__panel">' +
+                '<button id="close-modal" type="button" class="booking-modal__close" aria-label="Zamknij">' +
+                    '<svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">' +
                         '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>' +
                     '</svg>' +
                 '</button>' +
-                '<div class="p-6 md:p-8">' +
-                    '<h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-[#1D343B]">Umów wizytę w Klinice OrthoCare</h2>' +
-                    '<div class="flex justify-center">' +
+                '<div class="booking-modal__body">' +
+                    '<h2 class="heading booking-modal__title">Umów wizytę w Klinice OrthoCare</h2>' +
+                    '<div class="booking-modal__widget">' +
                         '<a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow" data-zlw-facility="klinika-orthocare" data-zlw-type="facility-big" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Klinika OrthoCare</a>' +
                     '</div>' +
                 '</div>' +
@@ -323,6 +446,7 @@ function initDelegatedBookingModal() {
         const trigger = e.target.closest && e.target.closest('.umow-wizyte-btn');
         if (trigger) {
             e.preventDefault();
+            closeMobile();
             ensureBookingWidgetScript();
             const modal = ensureBookingModalElement();
             openBookingModal(modal);
@@ -366,6 +490,105 @@ function initDelegatedBookingModal() {
 
 document.addEventListener('DOMContentLoaded', initDelegatedBookingModal);
 
-// Re-initialize mobile menu after dynamic content loads
-// This will be called after fetch operations complete
-window.reinitMobileMenu = initMobileMenu;
+// Procedure accordion (Zabiegi)
+function toggleProcedure(id) {
+    const content = document.getElementById('content-' + id);
+    const icon = document.getElementById('icon-' + id);
+    if (!content || !icon) {
+        return;
+    }
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+window.toggleProcedure = toggleProcedure;
+
+// Service accordion (Cennik)
+function toggleService(serviceId) {
+    const content = document.getElementById('content-' + serviceId);
+    const icon = document.getElementById('icon-' + serviceId);
+    if (!content || !icon) {
+        return;
+    }
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+window.toggleService = toggleService;
+
+// Gallery lightbox (O nas)
+function openGalleryModal(imageId) {
+    const modal = document.getElementById('gallery-modal');
+    const clickedImage = document.querySelector('[onclick="openGalleryModal(\'' + imageId + '\')"] img');
+    const modalImage = document.getElementById('modal-image');
+    const modalCaption = document.getElementById('modal-caption');
+    if (!modal || !clickedImage || !modalImage) {
+        return;
+    }
+    modalImage.src = clickedImage.dataset.fullSrc || clickedImage.src;
+    modalImage.alt = clickedImage.alt || 'Klinika OrthoCare';
+    if (modalCaption) {
+        modalCaption.textContent = clickedImage.alt || 'Klinika OrthoCare';
+    }
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('nav-open');
+}
+window.openGalleryModal = openGalleryModal;
+
+function closeGalleryModal() {
+    const modal = document.getElementById('gallery-modal');
+    const modalImage = document.getElementById('modal-image');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+    }
+    if (modalImage) {
+        modalImage.removeAttribute('src');
+    }
+    document.body.classList.remove('nav-open');
+}
+window.closeGalleryModal = closeGalleryModal;
+
+function initGalleryLightbox() {
+    var galleryModal = document.getElementById('gallery-modal');
+    if (!galleryModal) {
+        return;
+    }
+    galleryModal.addEventListener('click', function (e) {
+        if (e.target.classList.contains('gallery-lightbox__backdrop')) {
+            closeGalleryModal();
+        }
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && galleryModal && !galleryModal.classList.contains('hidden')) {
+            closeGalleryModal();
+        }
+    });
+}
+
+function initAnchorNav() {
+    /* multi-page site — anchor nav not used */
+}
+window.initAnchorNav = initAnchorNav;
+
+function scrollToHashOnLoad() {
+    /* no-op on multi-page site */
+}
+
+// Gallery modal click-outside handler on home page
+document.addEventListener('DOMContentLoaded', function () {
+    initAnchorNav();
+    scrollToHashOnLoad();
+    initGalleryLightbox();
+});
+
+// Re-init mobile menu after dynamic header load on doctor pages

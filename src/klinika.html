@@ -3,75 +3,205 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O nas – OrthoCare</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/dist/output.css" rel="stylesheet">
+  <title>O nas – OrthoCare Radom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="dns-prefetch" href="https://platform.docplanner.com">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="css/legacy.css" rel="stylesheet">
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-brand-light min-h-screen overflow-x-hidden">
-  <header id="main-header"></header>
-  <main class="w-full max-w-full overflow-x-hidden py-12 md:py-16 px-4 lg:px-[15%]">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-brand text-sm font-semibold uppercase tracking-widest mb-3">OrthoCare</p>
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-8">O nas</h1>
-      <p class="text-xl text-brand-dark font-medium mb-8">OrthoCare – codziennie odpowiadamy na realne potrzeby</p>
+<body>
 
-      <div class="text-base md:text-lg text-gray-700 space-y-5 leading-relaxed">
-        <p>OrthoCare to miejsce stworzone z myślą o pacjentach, którzy oczekują więcej niż tylko standardowej konsultacji. Łączymy nowoczesne podejście medyczne z indywidualną opieką nad każdym, kto trafia pod naszą opiekę. Specjalizujemy się w <strong>precyzyjnej diagnostyce i kompleksowym leczeniu schorzeń narządu ruchu</strong> – od dolegliwości kręgosłupa po zaawansowane problemy stawowe.</p>
-        <p>Nasz zespół tworzą doświadczeni lekarze ortopedzi, a pacjenci mają również możliwość skorzystania z konsultacji neurologicznych i reumatologicznych — w ramach współpracy z lekarzami innych specjalizacji. Pracujemy zespołowo i interdyscyplinarnie — także we współpracy z <strong>Rehabilitacją Plus</strong>, czyli zespołem znakomitych fizjoterapeutów. Dzięki temu pacjenci mają zapewnioną płynną kontynuację terapii i szybszy powrót do zdrowia.</p>
+<header id="site-header">
+<nav class="nav">
+  <div class="nav__wrap">
+    <a href="index.html" class="nav__logo">
+      <picture><source type="image/webp" srcset="assets/logo-orthocare.webp"><img src="assets/logo-orthocare.png" alt="OrthoCare" width="180" height="38" decoding="async" ></picture>
+    </a>
+    <ul class="nav__links" id="navLinks">
+        <li><a href="klinika.html" class="is-active">O nas</a></li>
+        <li><a href="zespol.html">Lekarze</a></li>
+        <li><a href="cennik.html">Usługi i cennik</a></li>
+        <li><a href="zabiegi.html">Zabiegi</a></li>
+        <li><a href="kriolezja.html">Kriolezja</a></li>
+    </ul>
+    <div class="nav__actions">
+      <div class="nav__social">
+        <a href="https://www.instagram.com/klinika_orthocare/" target="_blank" class="nav-social-btn" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" target="_blank" class="nav-social-btn" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+      <a href="kontakt.html" class="nav__btn-kontakt">Kontakt</a>
+      <button type="button" class="nav__btn-rezerwuj umow-wizyte-btn">Umów wizytę</button>
+    </div>
+    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="klinika.html" class="is-active">O nas</a>
+    <a href="zespol.html">Lekarze</a>
+    <a href="cennik.html">Usługi i cennik</a>
+    <a href="zabiegi.html">Zabiegi</a>
+    <a href="kriolezja.html">Kriolezja</a>
+    <a href="kontakt.html">Kontakt</a>
+    <div class="nav-cta-wrap">
+      <button type="button" class="btn btn--primary umow-wizyte-btn" style="width:100%">Umów wizytę</button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main>
+<div class="page-section__head">
+  <div class="wrap-inner">
+    <h1 class="page-title">O nas</h1>
+  </div>
+</div>
+<div class="page-section__body">
+  <div class="wrap-inner legacy-content">
+<div class="max-w-4xl mx-auto o-nas-content">
+      <h2 class="o-nas-content__title">OrthoCare – codziennie odpowiadamy na realne potrzeby</h2>
+      <div class="o-nas-content__body">
+        <p>OrthoCare to miejsce stworzone z myślą o pacjentach, którzy oczekują więcej niż tylko standardowej konsultacji.</p>
+        <p>Łączymy nowoczesne podejście medyczne z indywidualną opieką nad każdym, kto trafia pod naszą opiekę. Specjalizujemy się w <strong>precyzyjnej diagnostyce i kompleksowym leczeniu schorzeń narządu ruchu</strong> – od dolegliwości kręgosłupa po zaawansowane problemy stawowe.</p>
+        <p>Nasz zespół tworzą doświadczeni lekarze ortopedzi, a pacjenci mają również możliwość skorzystania z konsultacji neurologicznych i reumatologicznych — w ramach współpracy z lekarzami innych specjalizacji.</p>
+        <p>Pracujemy zespołowo i interdyscyplinarnie — także we współpracy z <strong>Rehabilitacją Plus</strong>, czyli zespołem znakomitych fizjoterapeutów. Dzięki temu pacjenci mają zapewnioną płynną kontynuację terapii i szybszy powrót do zdrowia.</p>
         <p>Wierzymy, że skuteczne leczenie zaczyna się od <strong>rozmowy i zaufania</strong>. Nie przyspieszamy wizyt. Słuchamy uważnie i dajemy czas — bo każdy przypadek wymaga indywidualnego podejścia i pełnego zrozumienia.</p>
-        <p>Pracujemy na sprawdzonych, <strong>wysokiej jakości preparatach</strong>, korzystamy z <strong>nowoczesnych aparatów USG</strong>, a nasi pacjenci mają dostęp do <strong>pracowni RTG, gipsowni i sali zabiegowej</strong>. Wszystkie usługi dostępne są w jednej przestrzeni – bez konieczności szukania ich poza kliniką. Dzięki temu leczenie przebiega sprawnie i bez zbędnych opóźnień.</p>
-        <p>Nasza siedziba znajduje się w nowoczesnym, przestronnym budynku zaprojektowanym z myślą o komforcie obsługi oraz sprawniejszej organizacji pracy zespołu. Do dyspozycji pacjentów jest wygodny, <strong>własny parking</strong>, a wszystkie gabinety zlokalizowane są <strong>na parterze</strong>, z łatwym dostępem bez barier.</p>
+        <p>Pracujemy na sprawdzonych, <strong>wysokiej jakości preparatach</strong>, korzystamy z <strong>nowoczesnych aparatów USG</strong>, a nasi pacjenci mają dostęp do <strong>pracowni RTG, gipsowni i sali zabiegowej</strong>.</p>
+        <p>Wszystkie usługi dostępne są w jednej przestrzeni – bez konieczności szukania ich poza kliniką. Dzięki temu leczenie przebiega sprawnie i bez zbędnych opóźnień.</p>
+        <p>Nasza siedziba znajduje się w nowoczesnym, przestronnym budynku zaprojektowanym z myślą o komforcie obsługi oraz sprawniejszej organizacji pracy zespołu.</p>
+        <p>Do dyspozycji pacjentów jest wygodny, <strong>własny parking</strong>, a wszystkie gabinety zlokalizowane są <strong>na parterze</strong>, z łatwym dostępem bez barier.</p>
         <p>Zaufanie, jakim obdarzają nas pacjenci, doceniła również drużyna futbolu amerykańskiego <strong>Warsaw Eagles</strong>, dla której jesteśmy oficjalnym partnerem medycznym.</p>
-        <p class="text-xl font-semibold text-brand-dark pt-2">Każdego dnia wychodzimy naprzeciw oczekiwaniom naszych pacjentów — z zaangażowaniem, uwagą i pełnym profesjonalizmem.</p>
+        <p class="o-nas-content__closing"><strong>Każdego dnia wychodzimy naprzeciw oczekiwaniom naszych pacjentów — z zaangażowaniem, uwagą i pełnym profesjonalizmem.</strong></p>
       </div>
     </div>
 
     <section class="w-full mt-16 max-w-6xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8 text-center">Galeria zdjęć</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-heading mb-8 text-center">Galeria zdjęć</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-1')"><img src="assets/gallery/strona1.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-2')"><img src="assets/gallery/strona2 (1).jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-3')"><img src="assets/gallery/strona4.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-4')"><img src="assets/gallery/strona5.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-5')"><img src="assets/gallery/strona6.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-6')"><img src="assets/gallery/strona7.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-7')"><img src="assets/gallery/strona8.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-8')"><img src="assets/gallery/strona9.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-9')"><img src="assets/gallery/strona10.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-10')"><img src="assets/gallery/strona11.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-11')"><img src="assets/gallery/strona12.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
-        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openModal('gallery-12')"><img src="assets/gallery/strona13.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover"></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-1')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona1.webp"><img src="assets/gallery/thumbs/strona1.jpg" data-full-src="assets/gallery/strona1.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-2')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona2 (1).webp"><img src="assets/gallery/thumbs/strona2 (1).jpg" data-full-src="assets/gallery/strona2 (1).jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-3')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona4.webp"><img src="assets/gallery/thumbs/strona4.jpg" data-full-src="assets/gallery/strona4.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-4')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona5.webp"><img src="assets/gallery/thumbs/strona5.jpg" data-full-src="assets/gallery/strona5.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-5')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona6.webp"><img src="assets/gallery/thumbs/strona6.jpg" data-full-src="assets/gallery/strona6.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-6')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona7.webp"><img src="assets/gallery/thumbs/strona7.jpg" data-full-src="assets/gallery/strona7.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-7')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona8.webp"><img src="assets/gallery/thumbs/strona8.jpg" data-full-src="assets/gallery/strona8.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-8')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona9.webp"><img src="assets/gallery/thumbs/strona9.jpg" data-full-src="assets/gallery/strona9.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-9')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona10.webp"><img src="assets/gallery/thumbs/strona10.jpg" data-full-src="assets/gallery/strona10.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-10')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona11.webp"><img src="assets/gallery/thumbs/strona11.jpg" data-full-src="assets/gallery/strona11.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-11')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona12.webp"><img src="assets/gallery/thumbs/strona12.jpg" data-full-src="assets/gallery/strona12.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item aspect-square overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openGalleryModal('gallery-12')"><picture><source type="image/webp" srcset="assets/gallery/thumbs/strona13.webp"><img src="assets/gallery/thumbs/strona13.jpg" data-full-src="assets/gallery/strona13.jpg" alt="Klinika OrthoCare" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture></div>
       </div>
     </section>
 
-    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
-      <div class="relative max-w-4xl max-h-full">
-        <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">×</button>
-        <img id="modal-image" src="" alt="" class="max-w-full max-h-full object-contain">
+    <div id="gallery-modal" class="gallery-lightbox hidden" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia">
+      <div class="gallery-lightbox__backdrop" onclick="closeGalleryModal()" aria-hidden="true"></div>
+      <div class="gallery-lightbox__frame">
+        <button type="button" class="gallery-lightbox__close" onclick="closeGalleryModal()" aria-label="Zamknij">&times;</button>
+        <img id="modal-image" src="" alt="" class="gallery-lightbox__img">
+        <p id="modal-caption" class="gallery-lightbox__caption">Klinika OrthoCare</p>
       </div>
     </div>
-  </main>
-  <footer id="main-footer"></footer>
-  <script src="js/main.js"></script>
-  <script>
-    fetch('index.html').then(r=>r.text()).then(html=>{
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      document.getElementById('main-header').innerHTML = doc.querySelector('header').outerHTML;
-      document.getElementById('main-footer').innerHTML = doc.querySelector('footer').outerHTML;
-      if (window.reinitMobileMenu) window.reinitMobileMenu();
-    });
-    function openModal(imageId) {
-      const modal = document.getElementById('gallery-modal');
-      const clickedImage = document.querySelector(`[onclick="openModal('${imageId}')"] img`);
-      document.getElementById('modal-image').src = clickedImage.src;
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+  </div>
+</div>
+</main>
+
+<footer class="footer-dark">
+  <div class="footer-dark__top">
+    <div class="wrap">
+      <div class="footer-dark__grid">
+        <div class="footer-dark__brand">
+          <picture><source type="image/webp" srcset="assets/logo-footer.webp"><img src="assets/logo-footer.png" alt="OrthoCare" class="footer-dark__logo" loading="lazy" decoding="async" width="240" height="96" ></picture>
+          <p class="footer-dark__tagline">Ortopedia nowego pokolenia. Łączymy najnowocześniejszą wiedzę medyczną z indywidualnym podejściem.</p>
+          <div class="footer-dark__social">
+            <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" target="_blank" class="footer-social-btn" aria-label="Facebook">fb</a>
+            <a href="https://www.instagram.com/klinika_orthocare/" target="_blank" class="footer-social-btn" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Nawigacja</p>
+          <ul class="footer-dark__list">
+            <li><a href="klinika.html">O nas</a></li>
+            <li><a href="zespol.html">Lekarze</a></li>
+            <li><a href="cennik.html">Usługi i cennik</a></li>
+            <li><a href="zabiegi.html">Zabiegi</a></li>
+            <li><a href="kriolezja.html">Kriolezja</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Dokumenty</p>
+          <ul class="footer-dark__list">
+            <li><a href="assets/rodo.pdf" target="_blank">Klauzula RODO</a></li>
+            <li><a href="assets/regulamin.pdf" target="_blank">Regulamin kliniki</a></li>
+            <li><a href="assets/downloads/Polityka cookies serwisu OrthoCare.pdf" target="_blank">Polityka cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Nasi partnerzy</p>
+          <div class="footer-dark__partners">
+            <a href="https://warsaweagles.com/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-eagles.webp"><img src="assets/partner-eagles.png" alt="Warsaw Eagles" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://www.rplusradom.pl/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-rehab-plus.webp"><img src="assets/partner-rehab-plus.png" alt="Rehabilitacja Plus" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://www.wksczarni.pl/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-czarni-radom.webp"><img src="assets/partner-czarni-radom.png" alt="WKS Czarni Radom" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://gipsme.pl/" target="_blank" rel="noopener" class="footer-partner-tile footer-partner-tile--gipsme"><picture><source type="image/webp" srcset="assets/gipsme.webp"><img src="assets/gipsme.png" alt="gipsme" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-dark__bottom">
+    <div class="wrap">
+      <span>© 2026 Klinika OrthoCare. Wszelkie prawa zastrzeżone.</span>
+      <span>ul. Dębowa 2, 26-600 Radom | <a href="tel:889817012">889 817 012</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<div id="booking-modal" class="booking-modal hidden">
+  <div class="booking-modal__panel">
+    <button id="close-modal" type="button" class="booking-modal__close" aria-label="Zamknij">
+      <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <div class="booking-modal__body">
+      <h2 class="heading booking-modal__title">Umów wizytę w OrthoCare</h2>
+      <div class="booking-modal__widget">
+        <a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow" data-zlw-facility="klinika-orthocare" data-zlw-type="facility-big" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Klinika OrthoCare</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="js/main.js" defer></script>
+<script defer>
+(function () {
+  function loadBookingWidget() {
+    if (document.getElementById('zl-widget-s')) return;
+    var js = document.createElement('script');
+    js.id = 'zl-widget-s';
+    js.src = 'https://platform.docplanner.com/js/widget.js';
+    js.async = true;
+    document.body.appendChild(js);
+  }
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.umow-wizyte-btn, .zl-facility-url')) {
+      loadBookingWidget();
     }
-    function closeModal() {
-      document.getElementById('gallery-modal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-    document.getElementById('gallery-modal').addEventListener('click', e => { if (e.target.id === 'gallery-modal') closeModal(); });
-  </script>
+  }, { passive: true });
+})();
+</script>
+
 </body>
 </html>

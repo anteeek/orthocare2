@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamil Fatyga – OrthoCare</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/dist/output.css" rel="stylesheet">
+  <title>lek. Kamil Fatyga – OrthoCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-brand-light min-h-screen overflow-x-hidden">
+<body>
   <header id="main-header"></header>
-  <main class="w-full max-w-3xl mx-auto px-6 py-12">
-    <h1 class="text-4xl font-bold text-brand-dark mb-2">lek. Kamil Fatyga</h1>
-    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu</h2>
-    <img src="assets/doctors/anonymous.jpg" alt="lek. Kamil Fatyga" class="w-48 rounded-2xl mb-8 object-cover">
-    <div class="text-gray-700 leading-relaxed space-y-4">
-      <p>Lekarz Kamil Fatyga jest absolwentem Uniwersytetu Medycznego w Lublinie. Staż podyplomowy oraz szkolenie rezydenckie odbywał w Klinice Ortopedii i Traumatologii Samodzielnego Publicznego Szpitala Klinicznego nr 4 w Lublinie, gdzie po uzyskaniu tytułu specjalisty kontynuował pracę na stanowisku starszego asystenta. Obecnie swoje doświadczenie zabiegowe rozwija, pracując na Oddziale Ortopedyczno-Urazowym SPZOZ w Kraśniku.</p>
+  <main class="doctor-profile">
+    <div class="wrap">
+      <a href="zespol.html" class="doctor-back">← Wróć do lekarzy</a>
+      <div class="doctor-profile__grid">
+        <div class="doctor-profile__content">
+          <h1 class="doctor-profile__name">lek. Kamil Fatyga</h1>
+          <p class="doctor-profile__spec">Ortopeda, w trakcie specjalizacji</p>
+          <div class="doctor-profile__bio"><p>Lekarz Kamil Fatyga jest absolwentem Uniwersytetu Medycznego w Lublinie. Staż podyplomowy oraz szkolenie rezydenckie odbywał w Klinice Ortopedii i Traumatologii Samodzielnego Publicznego Szpitala Klinicznego nr 4 w Lublinie, gdzie po uzyskaniu tytułu specjalisty kontynuował pracę na stanowisku starszego asystenta. Obecnie swoje doświadczenie zabiegowe rozwija, pracując na Oddziale Ortopedyczno-Urazowym SPZOZ w Kraśniku.</p>
       <p>Specjalizuje się w diagnostyce i leczeniu schorzeń narządu ruchu, ze szczególnym uwzględnieniem małoinwazyjnych procedur artroskopowych w obrębie stawu kolanowego oraz barkowego. Jako zapalony i doświadczony sportowiec, doskonale rozumie mechanikę urazów oraz potrzeby osób aktywnych fizycznie, co pozwala mu na precyzyjne dobieranie metod leczenia umożliwiających bezpieczny i szybki powrót do pełnej sprawności.</p>
-      <p>W codziennej praktyce wyróżnia się wyjątkową empatią, pogodnym usposobieniem i świetnym poczuciem humoru, dzięki czemu z łatwością buduje przyjazną atmosferę i redukuje stres pacjentów związany z wizytą. Swoje zaangażowanie opiera na partnerskiej komunikacji, precyzji oraz nowoczesnym podejściu do medycyny sportowej i traumatologii.</p>
+      <p>W codziennej praktyce wyróżnia się wyjątkową empatią, pogodnym usposobieniem i świetnym poczuciem humoru, dzięki czemu z łatwością buduje przyjazną atmosferę i redukuje stres pacjentów związany z wizytą. Swoje zaangażowanie opiera na partnerskiej komunikacji, precyzji oraz nowoczesnym podejściu do medycyny sportowej i traumatologii.</p></div>
+        </div>
+        <div class="doctor-profile__photo-wrap">
+          <picture><source type="image/webp" srcset="assets/doctors/anonymous.webp"><img src="assets/doctors/anonymous.jpg" alt="lek. Kamil Fatyga" class="doctor-profile__photo" decoding="async" width="720" height="960"></picture>
+        </div>
+      </div>
     </div>
   </main>
   <footer id="main-footer"></footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script>
     fetch('index.html').then(r=>r.text()).then(html=>{
       const doc = new DOMParser().parseFromString(html, 'text/html');

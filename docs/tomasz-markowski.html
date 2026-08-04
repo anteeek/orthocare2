@@ -3,25 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tomasz Markowski – OrthoCare</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/dist/output.css" rel="stylesheet">
+  <title>lek. Tomasz Markowski – OrthoCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-brand-light min-h-screen overflow-x-hidden">
+<body>
   <header id="main-header"></header>
-  <main class="w-full max-w-3xl mx-auto px-6 py-12">
-    <h1 class="text-4xl font-bold text-brand-dark mb-2">lek. Tomasz Markowski</h1>
-    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu</h2>
-    <img src="assets/doctors/markowski_tall.png" alt="lek. Tomasz Markowski" class="w-48 rounded-2xl mb-8 object-cover">
-    <div class="text-gray-700 leading-relaxed space-y-4">
-      <p>Dr Tomasz Markowski to specjalista ortopedii i traumatologii narządu ruchu, absolwent Wydziału Wojskowo-Lekarskiego Uniwersytetu Medycznego w Łodzi. Posiada wieloletnie doświadczenie kliniczne zdobyte m.in. w Mazowieckim Szpitalu Specjalistycznym w Radomiu oraz w Radomskim Szpitalu Specjalistycznym. Obecnie operuje pacjentów również w Szpitalu Powiatowym w Pionkach i w Opocznie.</p>
+  <main class="doctor-profile">
+    <div class="wrap">
+      <a href="zespol.html" class="doctor-back">← Wróć do lekarzy</a>
+      <div class="doctor-profile__grid">
+        <div class="doctor-profile__content">
+          <h1 class="doctor-profile__name">lek. Tomasz Markowski</h1>
+          <p class="doctor-profile__spec">Specjalista ortopedii i traumatologii narządu ruchu</p>
+          <div class="doctor-profile__bio"><p>Dr Tomasz Markowski to specjalista ortopedii i traumatologii narządu ruchu, absolwent Wydziału Wojskowo-Lekarskiego Uniwersytetu Medycznego w Łodzi. Posiada wieloletnie doświadczenie kliniczne zdobyte m.in. w Mazowieckim Szpitalu Specjalistycznym w Radomiu oraz w Radomskim Szpitalu Specjalistycznym. Obecnie operuje pacjentów również w Szpitalu Powiatowym w Pionkach i w Opocznie.</p>
       <p>Specjalizuje się w leczeniu przewlekłego bólu kręgosłupa z wykorzystaniem małoinwazyjnych technik interwencyjnych. Wykonuje kriolezję nerwów pod kontrolą USG – zabieg, który przynosi długotrwałą ulgę w bólu i znaczącą poprawę jakości życia pacjentów. Do tej pory przeprowadził ponad 400 takich procedur. Leczy również zespoły bólowe związane z przepuklinami dyskowymi oraz niestabilnością segmentów kręgosłupa. W swojej praktyce wprowadza również innowacyjne zabiegi z użyciem preparatu Discogel – małoinwazyjnej metody leczenia bólu dyskogennego, polegającej na przezskórnym wstrzyknięciu żelu do zmienionego chorobowo krążka międzykręgowego.</p>
       <p>W codziennej pracy wykorzystuje również iniekcje z osocza bogatopłytkowego (PRP), kwasu hialuronowego oraz blokady nerwów obwodowych pod kontrolą USG. Zajmuje się także leczeniem urazów i przeciążeń kończyny górnej oraz kolana, w tym bólu barku, łokcia, nadgarstka i stawu kolanowego. Wykonuje wybrane zabiegi artroskopowe oraz z zakresu chirurgii ręki.</p>
-      <p>Swoją wiedzą i doświadczeniem dzieli się prowadząc kursy dla lekarzy z zakresu iniekcji pod kontrolą USG. Ukończył szereg prestiżowych szkoleń, m.in. AOTrauma Basic & Advanced Principles of Fracture Management, IBRA – Trauma and Reconstruction of the Upper Limb, kurs "Ostra Ręka" oraz szkolenie z artroskopii kolana i ultrasonografii interwencyjnej w kriolezji.</p>
+      <p>Swoją wiedzą i doświadczeniem dzieli się prowadząc kursy dla lekarzy z zakresu iniekcji pod kontrolą USG. Ukończył szereg prestiżowych szkoleń, m.in. AOTrauma Basic & Advanced Principles of Fracture Management, IBRA – Trauma and Reconstruction of the Upper Limb, kurs "Ostra Ręka" oraz szkolenie z artroskopii kolana i ultrasonografii interwencyjnej w kriolezji.</p></div>
+        </div>
+        <div class="doctor-profile__photo-wrap">
+          <picture><source type="image/webp" srcset="assets/doctors/profile/markowski.webp"><img src="assets/doctors/profile/markowski.jpg" alt="lek. Tomasz Markowski" class="doctor-profile__photo" decoding="async" width="1000" height="1333"></picture>
+        </div>
+      </div>
     </div>
   </main>
   <footer id="main-footer"></footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script>
     fetch('index.html').then(r=>r.text()).then(html=>{
       const doc = new DOMParser().parseFromString(html, 'text/html');

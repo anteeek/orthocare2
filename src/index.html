@@ -1,266 +1,264 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrthoCare – centrum ortopedyczne</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="/dist/output.css" rel="stylesheet">
-    <style>
-        html, body {
-            width: 100vw;
-            overflow-x: hidden;
-            font-family: 'Montserrat', sans-serif;
-        }
-        main, section, footer, header {
-            width: 100vw;
-            max-width: 100vw;
-        }
-        *, ::before, ::after { box-sizing: border-box; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klinika OrthoCare – Radom</title>
+  <link rel="preload" as="image" href="assets/hero-desktop.webp" type="image/webp" fetchpriority="high" media="(min-width: 769px)">
+  <link rel="preload" as="image" href="assets/hero-2.webp" type="image/webp" fetchpriority="high" media="(max-width: 768px)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="dns-prefetch" href="https://platform.docplanner.com">
+  <link href="css/theme.css" rel="stylesheet">
 </head>
+<body>
 
-<body class="bg-white min-h-screen overflow-x-hidden" data-page="home">
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <nav class="w-full max-w-[1400px] mx-auto px-3 lg:px-8 py-3">
-            <div class="flex items-center justify-between gap-2">
-                <a href="/" class="flex-shrink-0">
-                    <img src="assets/logo-header.png" alt="OrthoCare" class="h-8 md:h-10 w-auto object-contain">
-                </a>
-
-                <div class="hidden lg:flex items-center gap-3 xl:gap-5 flex-1 justify-end">
-                    <a href="/klinika" class="text-sm xl:text-base font-semibold text-gray-900 hover:text-brand whitespace-nowrap">O nas</a>
-                    <a href="/zespol" class="text-sm xl:text-base font-semibold text-gray-900 hover:text-brand whitespace-nowrap">Lekarze</a>
-                    <a href="/cennik" class="text-sm xl:text-base font-semibold text-gray-900 hover:text-brand whitespace-nowrap">Usługi i cennik</a>
-                    <a href="/zabiegi" class="text-sm xl:text-base font-semibold text-gray-900 hover:text-brand whitespace-nowrap">Zabiegi</a>
-                    <a href="/kriolezja" class="text-sm xl:text-base font-semibold text-gray-900 hover:text-brand whitespace-nowrap">Kriolezja</a>
-                    <a href="/kontakt" class="text-sm xl:text-base font-semibold text-gray-900 hover:text-brand whitespace-nowrap">Kontakt</a>
-                    <button class="px-4 xl:px-5 py-2 rounded-full bg-brand text-white hover:bg-brand-dark transition-colors text-sm xl:text-base font-semibold whitespace-nowrap umow-wizyte-btn shadow-sm">
-                        Umów wizytę
-                    </button>
-                </div>
-
-                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menu">
-                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-2 space-y-3 border-t border-gray-100 pt-4">
-                <a href="/klinika" class="block text-gray-800 font-semibold">O nas</a>
-                <a href="/zespol" class="block text-gray-800 font-semibold">Lekarze</a>
-                <a href="/cennik" class="block text-gray-800 font-semibold">Usługi i cennik</a>
-                <a href="/zabiegi" class="block text-gray-800 font-semibold">Zabiegi</a>
-                <a href="/kriolezja" class="block text-gray-800 font-semibold">Kriolezja</a>
-                <a href="/kontakt" class="block w-full text-center px-6 py-3 rounded-full bg-gray-100 text-gray-800 font-semibold">Kontakt</a>
-                <button class="block w-full px-6 py-3 text-center rounded-full bg-brand text-white font-semibold umow-wizyte-btn">Umów wizytę</button>
-            </div>
-        </nav>
-    </header>
-
-    <main class="w-full max-w-full overflow-x-hidden">
-        <!-- Hero -->
-        <section class="relative w-full">
-            <div class="w-full h-[320px] sm:h-[400px] md:h-[500px] overflow-hidden">
-                <img src="assets/hero-main.png" alt="Klinika OrthoCare" class="w-full h-full object-cover object-center">
-            </div>
-            <div class="relative bg-brand py-10 md:py-14 text-center">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight drop-shadow-md">OrthoCare</h1>
-                <p class="mt-2 text-sm md:text-base font-medium text-white/90 uppercase tracking-[0.35em]">centrum ortopedyczne</p>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="bg-brand-light py-16 md:py-20 px-6 md:px-[10%]">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Medycyna oparta na doświadczeniu</h2>
-                <div class="text-base md:text-lg text-gray-700 space-y-4 leading-relaxed">
-                    <p>W OrthoCare łączymy nowoczesną ortopedię z indywidualnym podejściem do każdego pacjenta. Specjalizujemy się w małoinwazyjnych zabiegach, precyzyjnej diagnostyce i kompleksowej opiece nad narządem ruchu – od leczenia bólu kręgosłupa po artroskopię stawów.</p>
-                    <p>Tworzymy zespół lekarzy i specjalistów, którzy wierzą, że skuteczne leczenie zaczyna się od zaufania i czasu poświęconego pacjentowi. Pracujemy z pasją, bazując na wiedzy, doświadczeniu i najnowszych standardach medycyny.</p>
-                    <p class="font-semibold text-brand-dark text-xl pt-2">Poznaj nas bliżej i zobacz, jak możemy Ci pomóc.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Steps -->
-        <section class="w-full py-16 md:py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <div class="max-w-3xl mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Jak to wygląda w praktyce?</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed">W OrthoCare wierzymy, że dobra medycyna nie zaczyna się od prześwietlenia — tylko od rozmowy. Nie działamy na skróty. Skupiamy się na rozpoznaniu problemu i znalezieniu najlepszego rozwiązania.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="flex flex-col">
-                        <img src="assets/1ortho.jpg" alt="Konsultacja z ekspertem" class="rounded-2xl w-full h-72 object-cover mb-5">
-                        <h3 class="text-lg font-bold text-brand-dark mb-2">Rozmowa, która naprawdę coś wnosi</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Na początku po prostu słuchamy. Zadajemy pytania, dopytujemy o szczegóły, analizujemy objawy. Jeśli trzeba — kierujemy na badania. Nie patrzymy tylko na fragment – interesuje nas cały obraz.</p>
-                    </div>
-                    <div class="flex flex-col">
-                        <img src="assets/2ortho.jpg" alt="Zabieg dostosowany do Ciebie" class="rounded-2xl w-full h-72 object-cover mb-5">
-                        <h3 class="text-lg font-bold text-brand-dark mb-2">Leczenie, które ma sens</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Gdy wiemy, z czym mamy do czynienia, działamy. Czasem wystarczy leczenie zachowawcze, innym razem potrzebny jest zabieg. Zawsze tłumaczymy, dlaczego proponujemy daną metodę.</p>
-                    </div>
-                    <div class="flex flex-col">
-                        <img src="assets/3ortho.jpg" alt="Opieka po zabiegu" class="rounded-2xl w-full h-72 object-cover mb-5">
-                        <h3 class="text-lg font-bold text-brand-dark mb-2">Opieka bez ram czasowych</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Po zabiegu czy konsultacji jesteśmy nadal dostępni. Umawiamy kontrole, rozwiewamy wątpliwości, prowadzimy pacjenta dalej — jeśli tego potrzebuje.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="relative w-full bg-gradient-to-r from-[#9a8b82] to-[#6b5c54] py-14 md:py-20 px-6 md:px-12">
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="text-white">
-                    <p class="text-lg md:text-xl font-medium mb-2">Zapisz się na konsultację</p>
-                    <p class="text-4xl md:text-6xl font-extrabold text-white/30 select-none">OrthoCare</p>
-                </div>
-                <button class="inline-block px-10 md:px-14 py-4 rounded-full bg-white text-brand-dark font-bold text-lg md:text-xl shadow-lg hover:shadow-xl transition-shadow umow-wizyte-btn whitespace-nowrap">
-                    Umów wizytę
-                </button>
-            </div>
-        </section>
-
-        <!-- Opinions -->
-        <section class="w-full py-16 md:py-24 bg-white">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="text-center mb-12">
-                    <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">Zaufanie pacjentów</p>
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Opinie naszych pacjentów</h2>
-                </div>
-                <div class="overflow-hidden">
-                    <div id="opinions-carousel" class="flex transition-transform duration-500 ease-in-out">
-                        <div class="opinion-slide w-full flex-shrink-0 px-2">
-                            <div class="bg-brand-light rounded-3xl p-8 md:p-10 shadow-sm relative">
-                                <div class="text-brand text-5xl font-serif leading-none mb-4 select-none" aria-hidden="true">„</div>
-                                <div class="text-amber-500 text-lg mb-5 tracking-widest" aria-label="5 gwiazdek">★★★★★</div>
-                                <p class="text-gray-700 text-lg leading-relaxed mb-8">Profesjonalna opieka od pierwszej wizyty. Lekarz poświęcił mi tyle czasu, ile potrzebowałem, dokładnie wytłumaczył diagnozę i plan leczenia. Polecam z całego serca.</p>
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm">M</div>
-                                    <div>
-                                        <div class="font-bold text-brand-dark">Marek</div>
-                                        <div class="text-sm text-gray-500">Pacjent OrthoCare</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="opinion-slide w-full flex-shrink-0 px-2">
-                            <div class="bg-brand-light rounded-3xl p-8 md:p-10 shadow-sm relative">
-                                <div class="text-brand text-5xl font-serif leading-none mb-4 select-none" aria-hidden="true">„</div>
-                                <div class="text-amber-500 text-lg mb-5 tracking-widest" aria-label="5 gwiazdek">★★★★★</div>
-                                <p class="text-gray-700 text-lg leading-relaxed mb-8">Po latach bólu kolana wreszcie poczułam ulgę. Zabieg PRP wykonany precyzyjnie pod USG, a personel zawsze życzliwy i pomocny. Wracam tu z pełnym zaufaniem.</p>
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm">K</div>
-                                    <div>
-                                        <div class="font-bold text-brand-dark">Katarzyna</div>
-                                        <div class="text-sm text-gray-500">Pacjentka OrthoCare</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="opinion-slide w-full flex-shrink-0 px-2">
-                            <div class="bg-brand-light rounded-3xl p-8 md:p-10 shadow-sm relative">
-                                <div class="text-brand text-5xl font-serif leading-none mb-4 select-none" aria-hidden="true">„</div>
-                                <div class="text-amber-500 text-lg mb-5 tracking-widest" aria-label="5 gwiazdek">★★★★★</div>
-                                <p class="text-gray-700 text-lg leading-relaxed mb-8">Nowoczesna klinika, wszystko w jednym miejscu — konsultacja, RTG, zabieg. Bez zbędnego biegania. Atmosfera spokojna, a lekarze naprawdę słuchają.</p>
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm">T</div>
-                                    <div>
-                                        <div class="font-bold text-brand-dark">Tomasz</div>
-                                        <div class="text-sm text-gray-500">Pacjent OrthoCare</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="opinion-slide w-full flex-shrink-0 px-2">
-                            <div class="bg-brand-light rounded-3xl p-8 md:p-10 shadow-sm relative">
-                                <div class="text-brand text-5xl font-serif leading-none mb-4 select-none" aria-hidden="true">„</div>
-                                <div class="text-amber-500 text-lg mb-5 tracking-widest" aria-label="5 gwiazdek">★★★★★</div>
-                                <p class="text-gray-700 text-lg leading-relaxed mb-8">Syn miał uraz kolana — szybka diagnoza, jasne zalecenia i świetna opieka po zabiegu. Czułam się zaopiekowana na każdym etapie. Dziękujemy całemu zespołowi OrthoCare.</p>
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm">A</div>
-                                    <div>
-                                        <div class="font-bold text-brand-dark">Agnieszka</div>
-                                        <div class="text-sm text-gray-500">Pacjentka OrthoCare</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center mt-8 space-x-2" id="opinions-dots"></div>
-                    <div class="flex justify-center items-center mt-4 space-x-4">
-                        <button id="opinions-prev" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-brand/30 text-brand-dark hover:bg-brand hover:text-white hover:border-brand transition" aria-label="Poprzednia opinia">&#8592;</button>
-                        <button id="opinions-next" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-brand/30 text-brand-dark hover:bg-brand hover:text-white hover:border-brand transition" aria-label="Następna opinia">&#8594;</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Booking Modal -->
-    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="p-6 md:p-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-brand-dark">Umów wizytę w OrthoCare</h2>
-                <div class="flex justify-center">
-                    <a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow" data-zlw-facility="klinika-orthocare" data-zlw-type="facility-big" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Klinika OrthoCare</a>
-                </div>
-            </div>
-        </div>
+<header id="site-header">
+<nav class="nav">
+  <div class="nav__wrap">
+    <a href="index.html" class="nav__logo">
+      <picture><source type="image/webp" srcset="assets/logo-orthocare.webp"><img src="assets/logo-orthocare.png" alt="OrthoCare" width="180" height="38" decoding="async" ></picture>
+    </a>
+    <ul class="nav__links" id="navLinks">
+        <li><a href="klinika.html">O nas</a></li>
+        <li><a href="zespol.html">Lekarze</a></li>
+        <li><a href="cennik.html">Usługi i cennik</a></li>
+        <li><a href="zabiegi.html">Zabiegi</a></li>
+        <li><a href="kriolezja.html">Kriolezja</a></li>
+    </ul>
+    <div class="nav__actions">
+      <div class="nav__social">
+        <a href="https://www.instagram.com/klinika_orthocare/" target="_blank" class="nav-social-btn" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" target="_blank" class="nav-social-btn" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+      <a href="kontakt.html" class="nav__btn-kontakt">Kontakt</a>
+      <button type="button" class="nav__btn-rezerwuj umow-wizyte-btn">Umów wizytę</button>
     </div>
+    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="klinika.html">O nas</a>
+    <a href="zespol.html">Lekarze</a>
+    <a href="cennik.html">Usługi i cennik</a>
+    <a href="zabiegi.html">Zabiegi</a>
+    <a href="kriolezja.html">Kriolezja</a>
+    <a href="kontakt.html">Kontakt</a>
+    <div class="nav-cta-wrap">
+      <button type="button" class="btn btn--primary umow-wizyte-btn" style="width:100%">Umów wizytę</button>
+    </div>
+  </div>
+</nav>
+</header>
 
-    <footer class="w-full bg-brand-dark text-white pt-10 pb-6 mt-0">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between gap-8 px-6 relative">
-            <div class="flex-1">
-                <img src="assets/logo-new.png" alt="OrthoCare" class="h-10 mb-4 opacity-80">
-                <div class="text-sm text-white/70">© 2026 Klinika OrthoCare. Wszelkie prawa zastrzeżone</div>
-            </div>
-            <div class="flex-1 flex flex-col md:flex-row gap-8 w-full md:w-auto">
-                <div>
-                    <div class="font-semibold mb-2">Dokumenty do pobrania</div>
-                    <ul class="space-y-1 text-sm">
-                        <li><a href="assets/rodo.pdf" class="hover:underline text-white/80">Klauzula RODO</a></li>
-                        <li><a href="assets/downloads/Polityka cookies serwisu OrthoCare.pdf" class="hover:underline text-white/80">Polityka cookies</a></li>
-                        <li><a href="assets/regulamin.pdf" class="hover:underline text-white/80">Regulamin kliniki</a></li>
-                    </ul>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <div>
-                        <div class="font-semibold mb-2">Polub nas:</div>
-                        <div class="flex items-center gap-4">
-                            <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" class="text-white/80 hover:text-white text-sm">Facebook</a>
-                            <a href="https://www.instagram.com/klinika_orthocare/" class="text-white/80 hover:text-white text-sm">Instagram</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="font-semibold mb-2">Nasi partnerzy:</div>
-                        <div class="flex flex-wrap items-center gap-3">
-                            <a target="_blank" href="https://warsaweagles.com/"><img src="assets/eagles.png" alt="Warsaw Eagles" class="h-12 w-auto bg-white rounded p-1" /></a>
-                            <a target="_blank" href="https://www.rplusradom.pl/"><img src="assets/Rehabilitacjaplus.png" alt="Rehabilitacja Plus" class="h-12 w-auto bg-white rounded p-1" /></a>
-                            <a target="_blank" href="https://www.czarniradom.pl/"><img src="assets/czarni-radom.png" alt="W.K.S. Czarni Radom" class="h-12 w-auto bg-white rounded p-1" /></a>
-                            <a target="_blank" href="https://gipsme.pl/"><img src="assets/gipsme.png" alt="gipsME" class="h-8 w-auto bg-white rounded px-2 py-1" /></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<main>
+
+  <section class="hero hero-desktop full-bleed">
+    <picture>
+      <source type="image/webp" srcset="assets/hero-desktop.webp">
+      <img src="assets/hero-desktop.jpg" alt="OrthoCare centrum ortopedyczne" class="hero-desktop__img" fetchpriority="high" decoding="async" width="2800" height="1212" sizes="100vw" />
+    </picture>
+  </section>
+
+  <section class="hero hero-mobile">
+    <div class="hero-photos">
+      <picture>
+        <source type="image/webp" srcset="assets/hero-1.webp">
+        <img src="assets/hero-1.jpg" alt="OrthoCare" decoding="async" width="720" height="850">
+      </picture>
+      <picture class="hero-center">
+        <source type="image/webp" srcset="assets/hero-2.webp">
+        <img src="assets/hero-2.jpg" alt="OrthoCare" class="hero-center" fetchpriority="high" decoding="async" width="720" height="850">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="assets/hero-3.webp">
+        <img src="assets/hero-3.jpg" alt="OrthoCare" decoding="async" width="720" height="850">
+      </picture>
+    </div>
+    <div class="hero-plaque">
+      <h1 class="hero-logo">
+        <picture>
+          <source type="image/webp" srcset="assets/logo-hero-white.webp">
+          <img src="assets/logo-hero-white.png" alt="OrthoCare" width="819" height="149" decoding="async">
+        </picture>
+      </h1>
+      <div class="hero-mobile-cta">
+        <button type="button" class="btn btn--primary umow-wizyte-btn">Umów wizytę</button>
+        <a href="klinika.html" class="btn btn--outline">O nas</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro-team-block">
+    <div class="wrap">
+      <div class="intro-text">
+        <h2 class="intro-title">Medycyna oparta na doświadczeniu</h2>
+        <div class="intro-body">
+          <p>W OrthoCare łączymy nowoczesną ortopedię z indywidualnym podejściem do każdego pacjenta. Specjalizujemy się w małoinwazyjnych zabiegach, precyzyjnej diagnostyce i kompleksowej opiece nad narządem ruchu – od leczenia bólu kręgosłupa po artroskopię stawów.</p>
+          <p>Tworzymy zespół lekarzy i specjalistów, którzy wierzą, że skuteczne leczenie zaczyna się od zaufania i czasu poświęconego pacjentowi. Pracujemy z pasją, bazując na wiedzy, doświadczeniu i najnowszych standardach medycyny.</p>
         </div>
-    </footer>
+        <p class="intro-cta-text">Poznaj nas bliżej i zobacz, jak możemy Ci pomóc</p>
+        <div class="intro-actions">
+          <button type="button" class="btn btn--primary umow-wizyte-btn">Umów wizytę</button>
+          <a href="klinika.html" class="btn btn--outline">O nas</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
-    <script src="js/main.js"></script>
-    <script>
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-            document.getElementById('mobile-menu')?.classList.toggle('hidden');
-        });
-    </script>
+  <section class="intro-team-photo full-bleed">
+    <picture><source type="image/webp" srcset="assets/team-photo.webp"><img src="assets/team-photo.jpg" alt="Zespół lekarzy OrthoCare" class="intro-team-photo__img intro-team-photo__img--desktop" loading="lazy" decoding="async" fetchpriority="low" width="2800" height="937" ></picture>
+    <picture><source type="image/webp" srcset="assets/team-mobile.webp"><picture><source type="image/webp" srcset="assets/team-mobile.webp"><img src="assets/team-mobile.jpg" alt="Zespół lekarzy OrthoCare" class="intro-team-photo__img intro-team-photo__img--mobile" loading="lazy" decoding="async" width="1024" height="682" ></picture></picture>
+  </section>
+
+  <section class="section home-section">
+    <div class="wrap">
+      <h2 class="intro-title" style="margin-bottom:40px">Jak to wygląda w&nbsp;praktyce?</h2>
+      <div class="cards-carousel" data-cards-carousel>
+        <div class="cards-grid cards-grid--swipe cards-grid--steps" id="practiceCards" data-cards-track>
+        <div class="card3">
+          <div class="card3__img"><picture><source type="image/webp" srcset="assets/step-1.webp"><img src="assets/step-1.jpg" alt="Krok 1 – konsultacja" loading="lazy" decoding="async" ></picture></div>
+          <div class="card3__body">
+            <p class="subhead" style="margin-bottom:8px">Krok 1</p>
+            <h3 class="card3__title">Rozmowa, która naprawdę coś wnosi</h3>
+            <p class="card3__text">Na początku po prostu słuchamy. Zadajemy pytania, analizujemy objawy. Nie patrzymy tylko na fragment – interesuje nas cały obraz.</p>
+          </div>
+        </div>
+        <div class="card3">
+          <div class="card3__img"><picture><source type="image/webp" srcset="assets/step-2.webp"><img src="assets/step-2.jpg" alt="Krok 2 – leczenie" loading="lazy" decoding="async" ></picture></div>
+          <div class="card3__body">
+            <p class="subhead" style="margin-bottom:8px">Krok 2</p>
+            <h3 class="card3__title">Leczenie, które ma sens</h3>
+            <p class="card3__text">Gdy wiemy, z czym mamy do czynienia, działamy. Zawsze tłumaczymy, dlaczego proponujemy daną metodę.</p>
+          </div>
+        </div>
+        <div class="card3">
+          <div class="card3__img"><picture><source type="image/webp" srcset="assets/step-3.webp"><img src="assets/step-3.jpg" alt="Krok 3 – opieka" loading="lazy" decoding="async" ></picture></div>
+          <div class="card3__body">
+            <p class="subhead" style="margin-bottom:8px">Krok 3</p>
+            <h3 class="card3__title">Opieka bez ram czasowych</h3>
+            <p class="card3__text">Po zabiegu czy konsultacji jesteśmy nadal dostępni i prowadzimy pacjenta tak długo, jak tego potrzebuje.</p>
+          </div>
+        </div>
+        </div>
+        <div class="cards-carousel__controls">
+          <button type="button" class="slider-btn" data-cards-prev aria-label="Poprzednia karta">&#8592;</button>
+          <button type="button" class="slider-btn" data-cards-next aria-label="Następna karta">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-section section section--alt home-section" id="opinie">
+    <div class="wrap">
+      <h2 class="intro-title" style="margin-bottom:40px">Opinie naszych pacjentów</h2>
+      <div class="reviews-track" id="testGrid"></div>
+      <div class="reviews-controls">
+        <button class="slider-btn" id="tPrev" aria-label="Poprzednia opinia">&#8592;</button>
+        <button class="slider-btn" id="tNext" aria-label="Następna opinia">&#8594;</button>
+      </div>
+      <p class="reviews-note"><a href="https://www.google.com/maps/search/OrthoCare+Radom" target="_blank" rel="noopener">Zobacz wszystkie opinie w Google →</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer-dark">
+  <div class="footer-dark__top">
+    <div class="wrap">
+      <div class="footer-dark__grid">
+        <div class="footer-dark__brand">
+          <picture><source type="image/webp" srcset="assets/logo-footer.webp"><img src="assets/logo-footer.png" alt="OrthoCare" class="footer-dark__logo" loading="lazy" decoding="async" width="240" height="96" ></picture>
+          <p class="footer-dark__tagline">Ortopedia nowego pokolenia. Łączymy najnowocześniejszą wiedzę medyczną z indywidualnym podejściem.</p>
+          <div class="footer-dark__social">
+            <a href="https://www.facebook.com/profile.php?id=61564864085861&sk=about" target="_blank" class="footer-social-btn" aria-label="Facebook">fb</a>
+            <a href="https://www.instagram.com/klinika_orthocare/" target="_blank" class="footer-social-btn" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Nawigacja</p>
+          <ul class="footer-dark__list">
+            <li><a href="klinika.html">O nas</a></li>
+            <li><a href="zespol.html">Lekarze</a></li>
+            <li><a href="cennik.html">Usługi i cennik</a></li>
+            <li><a href="zabiegi.html">Zabiegi</a></li>
+            <li><a href="kriolezja.html">Kriolezja</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Dokumenty</p>
+          <ul class="footer-dark__list">
+            <li><a href="assets/rodo.pdf" target="_blank">Klauzula RODO</a></li>
+            <li><a href="assets/regulamin.pdf" target="_blank">Regulamin kliniki</a></li>
+            <li><a href="assets/downloads/Polityka cookies serwisu OrthoCare.pdf" target="_blank">Polityka cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-dark__col">
+          <p class="footer-dark__heading">Nasi partnerzy</p>
+          <div class="footer-dark__partners">
+            <a href="https://warsaweagles.com/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-eagles.webp"><img src="assets/partner-eagles.png" alt="Warsaw Eagles" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://www.rplusradom.pl/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-rehab-plus.webp"><img src="assets/partner-rehab-plus.png" alt="Rehabilitacja Plus" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://www.wksczarni.pl/" target="_blank" rel="noopener" class="footer-partner-tile"><picture><source type="image/webp" srcset="assets/partner-czarni-radom.webp"><img src="assets/partner-czarni-radom.png" alt="WKS Czarni Radom" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+            <a href="https://gipsme.pl/" target="_blank" rel="noopener" class="footer-partner-tile footer-partner-tile--gipsme"><picture><source type="image/webp" srcset="assets/gipsme.webp"><img src="assets/gipsme.png" alt="gipsme" class="footer-partner-logo" loading="lazy" decoding="async" width="80" height="80" ></picture></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-dark__bottom">
+    <div class="wrap">
+      <span>© 2026 Klinika OrthoCare. Wszelkie prawa zastrzeżone.</span>
+      <span>ul. Dębowa 2, 26-600 Radom | <a href="tel:889817012">889 817 012</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<div id="booking-modal" class="booking-modal hidden">
+  <div class="booking-modal__panel">
+    <button id="close-modal" type="button" class="booking-modal__close" aria-label="Zamknij">
+      <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <div class="booking-modal__body">
+      <h2 class="heading booking-modal__title">Umów wizytę w OrthoCare</h2>
+      <div class="booking-modal__widget">
+        <a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/klinika-orthocare" rel="nofollow" data-zlw-facility="klinika-orthocare" data-zlw-type="facility-big" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Klinika OrthoCare</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="js/main.js" defer></script>
+<script defer>
+(function () {
+  function loadBookingWidget() {
+    if (document.getElementById('zl-widget-s')) return;
+    var js = document.createElement('script');
+    js.id = 'zl-widget-s';
+    js.src = 'https://platform.docplanner.com/js/widget.js';
+    js.async = true;
+    document.body.appendChild(js);
+  }
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.umow-wizyte-btn, .zl-facility-url')) {
+      loadBookingWidget();
+    }
+  }, { passive: true });
+})();
+</script>
+
 </body>
-
 </html>

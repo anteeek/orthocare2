@@ -210,7 +210,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: inherit;
+  font-size:inherit;
   font-weight: inherit;
 }
 
@@ -249,7 +249,7 @@ pre {
   /* 2 */
   font-variation-settings: normal;
   /* 3 */
-  font-size: 1em;
+  font-size:1em;
   /* 4 */
 }
 
@@ -258,7 +258,7 @@ Add the correct font size in all browsers.
 */
 
 small {
-  font-size: 80%;
+  font-size:80%;
 }
 
 /*
@@ -267,7 +267,7 @@ Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 
 sub,
 sup {
-  font-size: 75%;
+  font-size:75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -313,7 +313,7 @@ textarea {
   /* 1 */
   font-variation-settings: inherit;
   /* 1 */
-  font-size: 100%;
+  font-size:100%;
   /* 1 */
   font-weight: inherit;
   /* 1 */
@@ -1349,47 +1349,47 @@ html {
 }
 
 .text-2xl {
-  font-size: 1.5rem;
+  font-size:calc(1.5rem + 1px);
   line-height: 2rem;
 }
 
 .text-3xl {
-  font-size: 1.875rem;
+  font-size:calc(1.875rem + 1px);
   line-height: 2.25rem;
 }
 
 .text-4xl {
-  font-size: 2.25rem;
+  font-size:calc(2.25rem + 1px);
   line-height: 2.5rem;
 }
 
 .text-5xl {
-  font-size: 3rem;
+  font-size:calc(3rem + 1px);
   line-height: 1;
 }
 
 .text-base {
-  font-size: 1rem;
+  font-size:calc(1rem + 1px);
   line-height: 1.5rem;
 }
 
 .text-lg {
-  font-size: 1.125rem;
+  font-size:calc(1.125rem + 1px);
   line-height: 1.75rem;
 }
 
 .text-sm {
-  font-size: 0.875rem;
+  font-size:calc(0.875rem + 1px);
   line-height: 1.25rem;
 }
 
 .text-xl {
-  font-size: 1.25rem;
+  font-size:calc(1.25rem + 1px);
   line-height: 1.75rem;
 }
 
 .text-xs {
-  font-size: 0.75rem;
+  font-size:calc(0.75rem + 1px);
   line-height: 1rem;
 }
 
@@ -1740,17 +1740,17 @@ html {
   }
 
   .md\:text-3xl {
-    font-size: 1.875rem;
+    font-size:calc(1.875rem + 1px);
     line-height: 2.25rem;
   }
 
   .md\:text-5xl {
-    font-size: 3rem;
+    font-size:calc(3rem + 1px);
     line-height: 1;
   }
 
   .md\:text-lg {
-    font-size: 1.125rem;
+    font-size:calc(1.125rem + 1px);
     line-height: 1.75rem;
   }
 }
@@ -1798,12 +1798,12 @@ html {
   }
 
   .lg\:text-lg {
-    font-size: 1.125rem;
+    font-size:calc(1.125rem + 1px);
     line-height: 1.75rem;
   }
 
   .lg\:text-xl {
-    font-size: 1.25rem;
+    font-size:calc(1.25rem + 1px);
     line-height: 1.75rem;
   }
 }
@@ -1827,15 +1827,19 @@ html {
 }
 
 /* OrthoCare brand utilities (2026 redesign) */
-.bg-brand { background-color: #8e8279; }
-.bg-brand-dark { background-color: #5a4a42; }
-.bg-brand-light { background-color: #f5f3f1; }
-.text-brand { color: #8e8279; }
-.text-brand-dark { color: #5a4a42; }
-.hover\:bg-brand-dark:hover { background-color: #5a4a42; }
-.hover\:text-brand:hover { color: #8e8279; }
-.border-brand\/30 { border-color: rgb(142 130 121 / 0.3); }
-.border-brand\/40 { border-color: rgb(142 130 121 / 0.4); }
-.bg-brand\/10 { background-color: rgb(142 130 121 / 0.1); }
-.from-brand { --tw-gradient-from: #8e8279 var(--tw-gradient-from-position); --tw-gradient-to: rgb(142 130 121 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
-.to-brand-dark { --tw-gradient-to: #5a4a42 var(--tw-gradient-to-position); }
+.bg-brand { background-color: #968981; }
+.bg-brand-dark { background-color: #5c4f47; }
+.bg-brand-light { background-color: #f0ebe8; }
+.text-brand { color: #968981; }
+.text-brand-dark { color: #5c4f47; }
+.text-brand-muted { color: #8f8882; }
+.text-brand-heading { color: #584b43; }
+.text-brand-body { color: #8f8882; }
+.border-brand { border-color: #968981; }
+.hover\:bg-brand-dark:hover { background-color: #5c4f47; }
+.hover\:text-brand:hover { color: #968981; }
+.border-brand\/30 { border-color: rgb(150 137 129 / 0.3); }
+.border-brand\/40 { border-color: rgb(150 137 129 / 0.4); }
+.bg-brand\/10 { background-color: rgb(150 137 129 / 0.1); }
+.from-brand { --tw-gradient-from: #968981 var(--tw-gradient-from-position); --tw-gradient-to: rgb(150 137 129 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.to-brand-dark { --tw-gradient-to: #5c4f47 var(--tw-gradient-to-position); }

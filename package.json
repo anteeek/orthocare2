@@ -1,13 +1,14 @@
 {
-  "name": "astro",
+  "name": "orthocare-site",
   "version": "1.0.0",
-  "description": "A simple static website with Tailwind CSS",
-  "main": "index.js",
+  "description": "OrthoCare clinic static website (GitHub Pages)",
+  "private": true,
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./src/dist/output.css",
     "watch": "tailwindcss -i ./src/input.css -o ./src/dist/output.css --watch",
     "start": "npx serve src",
-    "publish": "sh scripts/publish.sh"
+    "publish": "sh scripts/publish.sh",
+    "build:site": "sh scripts/build.sh"
   },
   "keywords": [],
   "author": "",

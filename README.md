@@ -1,71 +1,87 @@
-# Static Website with Tailwind CSS
+# OrthoCare — strona kliniki (GitHub Pages)
 
-A simple static website built with HTML, CSS, JavaScript, and Tailwind CSS.
+Statyczna strona Kliniki OrthoCare w Radomiu. Publikacja przez folder `docs/` na GitHub Pages z domeną `ortopedawradomiu.pl`.
 
-## Features
+## Struktura projektu
 
-- Modern, responsive design
-- Dark mode toggle
-- Smooth scrolling navigation
-- Mobile-friendly layout
-- Built with Tailwind CSS for utility-first styling
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Development
-
-To start the development server and watch for CSS changes:
-
-```bash
-npm run watch
+```
+src/                 # Źródła (edytuj tutaj)
+  sections/          # Fragmenty HTML podstron (cennik, zabiegi, o nas…)
+  css/               # theme.css, legacy.css
+  js/main.js
+  assets/            # Zdjęcia, logo, PDF
+docs/                # Wersja produkcyjna (generowana — nie edytuj ręcznie)
+scripts/
+  build_pages.py     # Składa HTML z sekcji
+  publish.sh         # Kopiuje src/ → docs/
+  build.sh           # build_pages + publish
+  optimize_images.sh # Kompresja zdjęć (macOS, sips)
+  clean_accordion_sections.py
+CNAME                # Domena GitHub Pages
 ```
 
-In a separate terminal, start the local server:
+## Wymagania
+
+- Python 3
+- Node.js 18+ i npm (tylko do Tailwind na podstronach z `dist/output.css`)
+
+## Instalacja
+
+```bash
+npm install
+```
+
+## Edycja i podgląd lokalny
+
+1. Edytuj pliki w `src/sections/` lub `src/css/`.
+2. Zbuduj strony:
+
+```bash
+bash scripts/build.sh
+```
+
+3. Podgląd lokalny:
 
 ```bash
 npm start
+# http://127.0.0.1:3000
 ```
 
-### Building for Production
+## Publikacja na GitHub
 
-To build the CSS for production:
+1. Upewnij się, że repozytorium ma ustawione **GitHub Pages → Deploy from branch → main → /docs**.
+2. Zbuduj i opublikuj:
 
 ```bash
-npm run build
+bash scripts/build.sh
 ```
 
-## Project Structure
+3. Commit i push:
 
-```
-.
-├── src/
-│   ├── index.html
-│   ├── input.css
-│   └── js/
-│       └── main.js
-├── dist/
-│   └── output.css
-├── package.json
-├── tailwind.config.js
-└── README.md
+```bash
+git add -A
+git commit -m "Opis zmian"
+git push origin main
 ```
 
-## Customization
+Jeśli repozytorium nie ma jeszcze remote:
 
-- Edit `src/input.css` to modify Tailwind CSS styles
-- Update `tailwind.config.js` to customize the Tailwind configuration
-- Modify `src/index.html` to change the website content
-- Edit `src/js/main.js` to add or modify JavaScript functionality 
+```bash
+git remote add origin https://github.com/TWOJ-USER/orthocare2.git
+git push -u origin main
+```
+
+Po pushu GitHub Pages wdroży zawartość `docs/` (zwykle w ciągu 1–3 minut).
+
+## Skróty npm
+
+| Polecenie | Opis |
+|-----------|------|
+| `npm run build` | Tailwind CSS → `src/dist/output.css` |
+| `npm run watch` | Tailwind w trybie watch |
+| `npm start` | Serwer lokalny (`src/`) |
+| `npm run publish` | `publish.sh` (src → docs) |
+
+## Domena
+
+Plik `CNAME` wskazuje `ortopedawradomiu.pl`. DNS musi wskazywać na GitHub Pages (rekordy A/CNAME u dostawcy domeny).

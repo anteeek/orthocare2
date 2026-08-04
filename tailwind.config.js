@@ -8,10 +8,11 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: '#8e8279',
-          dark: '#5a4a42',
-          light: '#f5f3f1',
-          muted: '#a89e94',
+          DEFAULT: '#968981',
+          dark: '#5c4f47',
+          light: '#f0ebe8',
+          muted: '#8f8882',
+          heading: '#584b43',
         },
       },
     },

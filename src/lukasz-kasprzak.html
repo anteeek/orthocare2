@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Łukasz Kasprzak – OrthoCare</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/dist/output.css" rel="stylesheet">
+  <title>lek. Łukasz Kasprzak – OrthoCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-brand-light min-h-screen overflow-x-hidden">
+<body>
   <header id="main-header"></header>
-  <main class="w-full max-w-3xl mx-auto px-6 py-12">
-    <h1 class="text-4xl font-bold text-brand-dark mb-2">lek. Łukasz Kasprzak</h1>
-    <h2 class="text-xl text-brand mb-6">Specjalista ortopedii i traumatologii narządu ruchu</h2>
-    <img src="assets/doctors/kasprzak.png" alt="lek. Łukasz Kasprzak" class="w-48 rounded-2xl mb-8 object-cover">
-    <div class="text-gray-700 leading-relaxed space-y-4">
-      <p>Lek. Łukasz Kasprzak jest absolwentem Wydziału Lekarskiego Akademii Medycznej w Lublinie. Od 2004 roku zajmuje się kompleksowym leczeniem pacjentów w zakresie ortopedii i traumatologii, zarówno ambulatoryjnie, jak i operacyjnie. Tytuł specjalisty uzyskał w 2011 roku.</p>
+  <main class="doctor-profile">
+    <div class="wrap">
+      <a href="zespol.html" class="doctor-back">← Wróć do lekarzy</a>
+      <div class="doctor-profile__grid">
+        <div class="doctor-profile__content">
+          <h1 class="doctor-profile__name">lek. Łukasz Kasprzak</h1>
+          <p class="doctor-profile__spec">Specjalista ortopedii i traumatologii narządu ruchu</p>
+          <div class="doctor-profile__bio"><p>Lek. Łukasz Kasprzak jest absolwentem Wydziału Lekarskiego Akademii Medycznej w Lublinie. Od 2004 roku zajmuje się kompleksowym leczeniem pacjentów w zakresie ortopedii i traumatologii, zarówno ambulatoryjnie, jak i operacyjnie. Tytuł specjalisty uzyskał w 2011 roku.</p>
       <p>Specjalizuje się w leczeniu urazów i schorzeń kończyn dolnych i górnych – w szczególności w zakresie stawu kolanowego, barkowego, łokciowego i skokowego. W codziennej praktyce wykonuje nowoczesne zabiegi artroskopowe, w tym szycie i resekcję łąkotek oraz rekonstrukcje więzadeł krzyżowych (ACL). Zajmuje się również leczeniem zespołów bólowych kręgosłupa oraz schorzeń zapalnych i przeciążeniowych.</p>
-      <p>Uczestniczył w ponad 100 kursach, konferencjach i szkoleniach praktycznych z zakresu ortopedii i ultrasonografii. W swojej praktyce wykorzystuje zaawansowane metody terapii, takie jak iniekcje z kwasu hialuronowego, osocza bogatopłytkowego (PRP) oraz blokady przeciwzapalne pod kontrolą USG. Ceniony przez pacjentów za skuteczność, dokładność i zaangażowanie.</p>
+      <p>Uczestniczył w ponad 100 kursach, konferencjach i szkoleniach praktycznych z zakresu ortopedii i ultrasonografii. W swojej praktyce wykorzystuje zaawansowane metody terapii, takie jak iniekcje z kwasu hialuronowego, osocza bogatopłytkowego (PRP) oraz blokady przeciwzapalne pod kontrolą USG. Ceniony przez pacjentów za skuteczność, dokładność i zaangażowanie.</p></div>
+        </div>
+        <div class="doctor-profile__photo-wrap">
+          <picture><source type="image/webp" srcset="assets/doctors/profile/kasprzak.webp"><img src="assets/doctors/profile/kasprzak.jpg" alt="lek. Łukasz Kasprzak" class="doctor-profile__photo" decoding="async" width="1000" height="1333"></picture>
+        </div>
+      </div>
     </div>
   </main>
   <footer id="main-footer"></footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script>
     fetch('index.html').then(r=>r.text()).then(html=>{
       const doc = new DOMParser().parseFromString(html, 'text/html');
